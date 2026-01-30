@@ -148,8 +148,8 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <p className="text-white font-semibold mb-1">Email</p>
-                      <p className="text-gray-400">info@millenniumai.com</p>
-                      <p className="text-gray-400">support@millenniumai.com</p>
+                      <p className="text-gray-400">info@millenniumai.in</p>
+                      <p className="text-gray-400">sales@millenniumai.in</p>
                     </div>
                   </div>
 
@@ -159,8 +159,8 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <p className="text-white font-semibold mb-1">Phone</p>
-                      <p className="text-gray-400">+1 (555) 123-4567</p>
-                      <p className="text-gray-400">+1 (555) 987-6543</p>
+                      <p className="text-gray-400">+91 7291874970</p>
+                      <p className="text-gray-400">+91 7053171752</p>
                     </div>
                   </div>
 
@@ -170,8 +170,8 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <p className="text-white font-semibold mb-1">Headquarters</p>
-                      <p className="text-gray-400">123 AI Innovation Drive</p>
-                      <p className="text-gray-400">San Francisco, CA 94105</p>
+                      <p className="text-gray-400">UGF 02 Krishna Enclave, Govindpuram</p>
+                      <p className="text-gray-400">Ghaziabad, Uttar Pradesh 201002, India</p>
                     </div>
                   </div>
                 </div>
@@ -264,7 +264,7 @@ const ContactPage = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                      placeholder="+1 (555) 123-4567"
+                      placeholder="+91 7291874970"
                     />
                   </div>
 
