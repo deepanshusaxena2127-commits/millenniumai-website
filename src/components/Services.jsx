@@ -15,44 +15,79 @@ const servicesData = [
   {
     icon: Database,
     title: 'AI/ML Data Annotation',
-    description: 'High-quality labeled data for training your machine learning models with precision and consistency.',
-    benefits: ['99.5% accuracy', 'Scalable workforce', 'Multi-domain expertise'],
+    description:
+      'High-quality, production-ready labeled data to support reliable model training and evaluation across AI use cases.',
+    benefits: [
+      '99.5%+ QA accuracy',
+      'Scalable annotation workforce',
+      'Multi-domain expertise',
+    ],
   },
   {
     icon: Sparkles,
-    title: 'Generative AI Solutions',
-    description: 'Custom LLMs, prompt engineering, and AI content generation tailored to your business needs.',
-    benefits: ['Custom model training', 'Enterprise integration', 'Ethical AI practices'],
+    title: 'Generative AI & LLM Services',
+    description:
+      'LLM fine-tuning, prompt engineering, and evaluation workflows designed to align models with business objectives.',
+    benefits: [
+      'LLM fine-tuning & customization',
+      'Enterprise system integration',
+      'Human-in-the-loop validation',
+    ],
   },
   {
     icon: Eye,
     title: 'Computer Vision',
-    description: 'Advanced image and video analysis for object detection, recognition, and scene understanding.',
-    benefits: ['Real-time processing', 'Edge deployment', 'Industry-specific models'],
+    description:
+      'Image and video annotation and analysis for object detection, tracking, segmentation, and scene understanding.',
+    benefits: [
+      'Production-scale pipelines',
+      'Edge & cloud deployment support',
+      'Industry-specific CV models',
+    ],
   },
   {
     icon: MessageSquare,
     title: 'Natural Language Processing',
-    description: 'Transform text data into actionable insights with sentiment analysis, entity recognition, and more.',
-    benefits: ['Multilingual support', 'Domain adaptation', 'Context-aware processing'],
+    description:
+      'Text data annotation and NLP workflows including classification, entity recognition, and semantic analysis.',
+    benefits: [
+      'Multilingual datasets',
+      'Domain-adapted annotation',
+      'Context-aware labeling',
+    ],
   },
   {
     icon: Mic,
     title: 'Speech AI',
-    description: 'Speech recognition, synthesis, and voice analytics for seamless human-machine interaction.',
-    benefits: ['Accent adaptation', 'Low latency', 'Custom voice models'],
+    description:
+      'Speech and audio data services including transcription, intent tagging, and voice analytics.',
+    benefits: [
+      'Accent & language coverage',
+      'Low-latency workflows',
+      'Custom speech datasets',
+    ],
   },
   {
     icon: Server,
     title: 'Data Engineering',
-    description: 'Build robust data pipelines and infrastructure to power your AI/ML initiatives at scale.',
-    benefits: ['Cloud-native solutions', 'Real-time processing', 'Data quality assurance'],
+    description:
+      'Robust data pipelines and infrastructure to support AI training, validation, and deployment at scale.',
+    benefits: [
+      'Cloud-native architectures',
+      'Real-time & batch processing',
+      'Data quality monitoring',
+    ],
   },
   {
     icon: Code,
     title: 'Digital Development Services',
-    description: 'End-to-end software development from AI-powered web apps to enterprise solutions.',
-    benefits: ['Full-stack expertise', 'Agile methodology', 'Continuous deployment'],
+    description:
+      'End-to-end development of AI-powered web and enterprise applications integrated with ML workflows.',
+    benefits: [
+      'Full-stack development',
+      'Agile delivery model',
+      'Deployment & integration support',
+    ],
   },
 ];
 
@@ -68,19 +103,23 @@ const Services = () => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Our <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Services</span>
+            Our{' '}
+            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              Services
+            </span>
           </h2>
           <p className="text-lg text-gray-300">
-            Comprehensive AI/ML solutions designed to accelerate your digital transformation journey
+            Enterprise-focused AI data, engineering, and development services
+            designed to support scalable and production-ready AI systems.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesData.map((service, index) => (
-            <ServiceCard 
-              key={service.title} 
-              service={service} 
-              index={index} 
+            <ServiceCard
+              key={service.title}
+              service={service}
+              index={index}
               isLastCard={index === servicesData.length - 1}
             />
           ))}
