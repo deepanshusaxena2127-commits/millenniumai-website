@@ -16,27 +16,43 @@ const ServiceCard = ({ service, index, isLastCard }) => {
         isLastCard ? 'lg:col-span-3' : ''
       }`}
     >
-      <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      {/* Hover overlay */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      />
 
       <div className={`relative z-10 ${isLastCard ? 'flex items-center gap-8' : ''}`}>
+        {/* Icon */}
         <div className="flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 mb-6 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-          <Icon className="w-7 h-7 text-white" />
+          <Icon className="w-7 h-7 text-white" aria-hidden="true" />
         </div>
 
         <div className={isLastCard ? 'flex-1' : ''}>
+          {/* Title */}
           <h3 className="text-2xl font-semibold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
             {service.title}
           </h3>
 
+          {/* Description */}
           <p className="text-gray-300 mb-6 leading-relaxed">
             {service.description}
           </p>
 
-          <div className={isLastCard ? 'flex gap-6' : 'space-y-2'}>
-            {service.benefits.map((benefit) => (
-              <div key={benefit} className="flex items-center gap-2">
-                <Check className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                <span className="text-sm text-gray-400">{benefit}</span>
+          {/* Benefits */}
+          <div className={isLastCard ? 'flex gap-6 flex-wrap' : 'space-y-2'}>
+            {service.benefits.map((benefit, i) => (
+              <div
+                key={`${service.title}-benefit-${i}`}
+                className="flex items-center gap-2"
+              >
+                <Check
+                  className="w-5 h-5 text-blue-400 flex-shrink-0"
+                  aria-hidden="true"
+                />
+                <span className="text-sm text-gray-400">
+                  {benefit}
+                </span>
               </div>
             ))}
           </div>
