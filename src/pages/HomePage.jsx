@@ -1,10 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import Solutions from '@/components/Solutions';
 import TrustSection from '@/components/TrustSection';
-import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const HomePage = () => {
@@ -17,7 +17,7 @@ const HomePage = () => {
 
         <meta
           name="description"
-          content="MillenniumAI delivers enterprise-grade AI data annotation, Generative AI, NLP, computer vision, and ML engineering services. Built for accuracy, security, and scalable production AI."
+          content="MillenniumAI delivers enterprise-grade AI data annotation, Generative AI, NLP, computer vision, and ML engineering services—built for accuracy, security, and scalable production AI."
         />
 
         <meta name="robots" content="index, follow" />
@@ -35,14 +35,32 @@ const HomePage = () => {
           content="Enterprise-focused AI data annotation and Generative AI services designed for accuracy, governance, and scale."
         />
         <meta property="og:url" content="https://www.millenniumai.in/" />
-        <meta property="og:image" content="https://www.millenniumai.in/og-image.jpg" />
+        <meta
+          property="og:image"
+          content="https://www.millenniumai.in/og-image.jpg"
+        />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'MillenniumAI',
+            url: 'https://www.millenniumai.in',
+            logo: 'https://www.millenniumai.in/logo.png',
+            description:
+              'Enterprise AI data annotation and Generative AI services for production-grade AI systems.',
+            sameAs: [],
+          })}
+        </script>
       </Helmet>
 
-      <main>
+      <main role="main">
+
         {/* HERO */}
         <Hero />
 
-        {/* SERVICES */}
+        {/* CORE SERVICES */}
         <Services />
 
         {/* WHY MILLENNIUMAI */}
@@ -55,30 +73,35 @@ const HomePage = () => {
             <p className="text-gray-400 max-w-3xl mx-auto mb-12 text-lg">
               MillenniumAI partners with enterprises and high-growth AI teams to
               deliver production-ready datasets and AI engineering services.
-              Our engagement model focuses on improving model accuracy,
-              accelerating deployment, and reducing execution risk.
+              Our engagement model is designed to improve model accuracy,
+              accelerate deployment, and reduce execution risk.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
                   title: 'Quality-First Execution',
-                  desc: 'Multi-layer QA, expert validation, and continuous accuracy monitoring are embedded into every dataset we deliver.',
+                  desc:
+                    'Multi-layer QA, expert validation, and continuous accuracy monitoring are embedded into every dataset we deliver.',
                 },
                 {
                   title: 'Enterprise-Scale Delivery',
-                  desc: 'From pilot datasets to multi-million data pipelines, we deliver consistent quality with predictable SLAs and timelines.',
+                  desc:
+                    'From pilot datasets to multi-million data pipelines, we deliver consistent quality with predictable SLAs and timelines.',
                 },
                 {
                   title: 'Security & Compliance-Aware',
-                  desc: 'Our workflows follow GDPR-aligned data handling practices, NDA-backed teams, controlled access, and client-specific security requirements.',
+                  desc:
+                    'GDPR-aligned workflows, NDA-backed teams, controlled access, and client-specific security requirements.',
                 },
               ].map((item) => (
                 <div
                   key={item.title}
                   className="p-8 rounded-2xl bg-white/5 border border-white/10"
                 >
-                  <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+                  <h3 className="text-xl font-semibold mb-3">
+                    {item.title}
+                  </h3>
                   <p className="text-gray-400">{item.desc}</p>
                 </div>
               ))}
@@ -89,7 +112,7 @@ const HomePage = () => {
         {/* SOLUTIONS / INDUSTRIES */}
         <Solutions />
 
-        {/* PROCESS */}
+        {/* DELIVERY PROCESS */}
         <section className="py-24 bg-[#0f0f16] text-white">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
@@ -100,19 +123,23 @@ const HomePage = () => {
               {[
                 {
                   title: 'Use-Case & Success Alignment',
-                  desc: 'We define objectives, edge cases, accuracy thresholds, security needs, and delivery KPIs before execution begins.',
+                  desc:
+                    'We define objectives, edge cases, accuracy thresholds, security needs, and delivery KPIs before execution begins.',
                 },
                 {
                   title: 'Data Preparation & Annotation',
-                  desc: 'Domain-trained teams execute structured annotation workflows using proven tools and standardized guidelines.',
+                  desc:
+                    'Domain-trained teams execute structured annotation workflows using proven tools and standardized guidelines.',
                 },
                 {
                   title: 'Multi-Level Quality Assurance',
-                  desc: 'Automated checks, expert audits, and feedback loops ensure consistently high-quality production datasets.',
+                  desc:
+                    'Automated checks, expert audits, and feedback loops ensure consistently high-quality production datasets.',
                 },
                 {
                   title: 'Secure Delivery & Iteration',
-                  desc: 'Version-controlled datasets are delivered securely with continuous iteration based on real-world model feedback.',
+                  desc:
+                    'Version-controlled datasets are delivered securely with continuous iteration based on real-world model feedback.',
                 },
               ].map((step, index) => (
                 <div
@@ -122,7 +149,9 @@ const HomePage = () => {
                   <div className="text-blue-400 font-bold text-lg mb-2">
                     Step {index + 1}
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {step.title}
+                  </h3>
                   <p className="text-gray-400 text-sm">{step.desc}</p>
                 </div>
               ))}
@@ -130,16 +159,16 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* TRUST CONTEXT (IMPORTANT FOR ENTERPRISE BUYERS) */}
+        {/* TRUST CONTEXT */}
         <section className="py-12 bg-[#0a0a0f] text-center text-gray-400">
           <div className="max-w-4xl mx-auto px-6 text-sm">
-            Metrics and testimonials below reflect anonymized enterprise and
+            Metrics and testimonials reflect anonymized enterprise and
             mid-market client engagements across regulated and non-regulated
             industries.
           </div>
         </section>
 
-        {/* TRUST / CREDENTIALS */}
+        {/* TRUST SECTION */}
         <TrustSection />
 
         {/* FINAL CTA */}
