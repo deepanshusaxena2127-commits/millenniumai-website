@@ -1,44 +1,56 @@
 import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 const Globe = () => {
   const canvasRef = useRef(null);
+  const animationRef = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
-    const width = canvas.width = 500;
-    const height = canvas.height = 500;
-    const centerX = width / 2;
-    const centerY = height / 2;
+    const dpr = window.devicePixelRatio || 1;
+
+    const size = 500;
+    canvas.width = size * dpr;
+    canvas.height = size * dpr;
+    canvas.style.width = `${size}px`;
+    canvas.style.height = `${size}px`;
+    ctx.scale(dpr, dpr);
+
+    const centerX = size / 2;
+    const centerY = size / 2;
     const radius = 180;
 
     let rotation = 0;
 
-    const drawGlobe = () => {
-      ctx.clearRect(0, 0, width, height);
+    // Pre-generate globe points (performance optimization)
+    const points = Array.from({ length: 800 }).map(() => {
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+      return { theta, phi };
+    });
 
+    const drawGlobe = () => {
+      ctx.clearRect(0, 0, size, size);
+
+      // Outer globe
       ctx.strokeStyle = '#667eea';
       ctx.lineWidth = 2;
       ctx.shadowBlur = 20;
       ctx.shadowColor = '#667eea';
-
       ctx.beginPath();
       ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
       ctx.stroke();
-
       ctx.shadowBlur = 0;
 
-      const numDots = 800;
-      for (let i = 0; i < numDots; i++) {
-        const theta = Math.random() * Math.PI * 2;
-        const phi = Math.acos(2 * Math.random() - 1);
-
-        const x = radius * Math.sin(phi) * Math.cos(theta + rotation);
-        const y = radius * Math.sin(phi) * Math.sin(theta + rotation);
-        const z = radius * Math.cos(phi);
+      // Points
+      for (const point of points) {
+        const x = radius * Math.sin(point.phi) * Math.cos(point.theta + rotation);
+        const y = radius * Math.sin(point.phi) * Math.sin(point.theta + rotation);
+        const z = radius * Math.cos(point.phi);
 
         if (z > 0) {
           const scale = (z + radius) / (2 * radius);
@@ -54,30 +66,37 @@ const Globe = () => {
         }
       }
 
-      rotation += 0.003;
-      requestAnimationFrame(drawGlobe);
+      rotation += shouldReduceMotion ? 0 : 0.003;
+      animationRef.current = requestAnimationFrame(drawGlobe);
     };
 
     drawGlobe();
-  }, []);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [shouldReduceMotion]);
 
   return (
     <motion.div
       className="relative"
-      animate={{
-        scale: [1, 1.02, 1],
-      }}
+      animate={
+        shouldReduceMotion
+          ? undefined
+          : { scale: [1, 1.02, 1] }
+      }
       transition={{
         duration: 4,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: 'easeInOut',
       }}
     >
       <canvas
         ref={canvasRef}
-        width={500}
-        height={500}
         className="max-w-full h-auto"
+        aria-hidden="true"
       />
     </motion.div>
   );
