@@ -2,124 +2,112 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useToast } from "@/components/ui/use-toast";
+import { Link } from 'react-router-dom';
 
-const pricingPlans = [
+const engagementModels = [
   {
-    name: 'Researcher',
-    price: '$49',
-    frequency: '/month',
-    description: 'For individual researchers and academics.',
+    name: 'Pilot & Proof of Concept',
+    description:
+      'Ideal for validating AI feasibility, data quality, and model performance before scaling.',
     features: [
-      'Access to core analysis tools',
-      '100GB of data storage',
-      'Community support',
-      'Basic collaboration features',
+      'Use-case validation & scoping',
+      'Sample dataset creation',
+      'Quality benchmarks & reporting',
+      'Fixed timeline & clear deliverables',
     ],
-    isFeatured: false,
+    highlight: false,
   },
   {
-    name: 'Lab Team',
-    price: '$199',
-    frequency: '/month',
-    description: 'For small teams and research labs.',
+    name: 'Dedicated AI Teams',
+    description:
+      'Best for organizations that require ongoing data annotation, QA, and AI engineering support.',
     features: [
-      'All features in Researcher',
-      '1TB of data storage',
-      'Advanced collaboration tools',
-      'Priority email support',
-      'AI model access',
+      'Dedicated annotators & QA leads',
+      'Domain-specific expertise',
+      'Flexible scaling & SLAs',
+      'Continuous delivery & iteration',
     ],
-    isFeatured: true,
+    highlight: true,
   },
   {
-    name: 'Enterprise',
-    price: 'Custom',
-    frequency: '',
-    description: 'For large organizations and institutions.',
+    name: 'Enterprise AI Programs',
+    description:
+      'Designed for large-scale, multi-project AI initiatives with strict security and governance needs.',
     features: [
-      'All features in Lab Team',
-      'Unlimited storage',
-      'Dedicated support & onboarding',
-      'Custom integrations & APIs',
-      'Advanced security & compliance',
+      'Multi-geo delivery model',
+      'Enterprise security & compliance',
+      'Custom workflows & tooling',
+      'Executive reporting & governance',
     ],
-    isFeatured: false,
+    highlight: false,
   },
 ];
 
 const Pricing = () => {
-    const { toast } = useToast();
-
-    const handleGetStarted = () => {
-        toast({
-            title: "This functionality is not added yet, but you can add it with your next prompts ❤️",
-        });
-    }
-
   return (
     <section className="py-20 sm:py-24 bg-gradient-to-b from-[#17001a] to-[#08001a]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light text-white leading-tight">
-            Flexible Pricing for Every Team
+            Flexible Engagement Models
           </h2>
           <p className="mt-4 text-lg text-gray-400">
-            Choose a plan that scales with your research needs. Start for free, no credit card required.
+            Our commercial models are tailored to your AI maturity, scale, and delivery requirements.
           </p>
         </div>
 
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-          {pricingPlans.map((plan, index) => (
+          {engagementModels.map((model, index) => (
             <motion.div
-              key={plan.name}
+              key={model.name}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`relative flex flex-col p-8 rounded-2xl border ${
-                plan.isFeatured
+                model.highlight
                   ? 'bg-white/10 border-blue-500 shadow-2xl shadow-blue-500/20'
                   : 'bg-white/5 border-white/10'
               }`}
             >
-              {plan.isFeatured && (
+              {model.highlight && (
                 <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
                   <span className="inline-flex items-center px-4 py-1 text-sm font-semibold text-white bg-blue-600 rounded-full">
-                    Most Popular
+                    Most Chosen Model
                   </span>
                 </div>
               )}
 
               <div className="flex-grow">
-                <h3 className="text-2xl font-semibold text-white">{plan.name}</h3>
-                <p className="mt-2 text-gray-400">{plan.description}</p>
-                <div className="mt-6 flex items-baseline gap-x-2">
-                  <span className="text-4xl font-bold tracking-tight text-white">{plan.price}</span>
-                  {plan.frequency && <span className="text-sm font-semibold text-gray-400">{plan.frequency}</span>}
-                </div>
+                <h3 className="text-2xl font-semibold text-white">
+                  {model.name}
+                </h3>
+                <p className="mt-2 text-gray-400">
+                  {model.description}
+                </p>
 
                 <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-300">
-                  {plan.features.map((feature) => (
+                  {model.features.map((feature) => (
                     <li key={feature} className="flex gap-x-3">
-                      <Check className="h-6 w-5 flex-none text-blue-400" aria-hidden="true" />
+                      <Check className="h-5 w-5 flex-none text-blue-400" aria-hidden="true" />
                       {feature}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <Button
-                onClick={handleGetStarted}
-                variant={plan.isFeatured ? 'default' : 'outline'}
-                className={`mt-8 w-full ${
-                  plan.isFeatured
-                    ? 'bg-blue-600 hover:bg-blue-500 text-white'
-                    : 'border-white/20 hover:bg-white/10 text-white'
-                }`}
-              >
-                Get Started
-              </Button>
+              <Link to="/contact">
+                <Button
+                  className={`mt-8 w-full ${
+                    model.highlight
+                      ? 'bg-blue-600 hover:bg-blue-500 text-white'
+                      : 'border-white/20 hover:bg-white/10 text-white'
+                  }`}
+                  variant={model.highlight ? 'default' : 'outline'}
+                >
+                  Request a Consultation
+                </Button>
+              </Link>
             </motion.div>
           ))}
         </div>
