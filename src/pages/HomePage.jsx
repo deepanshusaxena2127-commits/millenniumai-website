@@ -11,24 +11,35 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>MillenniumAi | Enterprise AI, Data Annotation & Generative AI Services</title>
+        {/* UPDATED: Stronger, enterprise-focused title */}
+        <title>
+          MillenniumAI | Enterprise AI Data Annotation & Generative AI Services
+        </title>
+
+        {/* UPDATED: Clear buyer intent + credibility */}
         <meta
           name="description"
-          content="Enterprise-grade AI/ML services including data annotation, Generative AI, computer vision, NLP, speech AI, data engineering, and digital development. Trusted by global enterprises."
+          content="MillenniumAI provides enterprise-grade AI data annotation, Generative AI, NLP, computer vision, and ML engineering services. Built for accuracy, security, and scalable AI production."
         />
+
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.millenniumai.com/" />
+
+        {/* UPDATED: Canonical should match .in domain */}
+        <link rel="canonical" href="https://www.millenniumai.in/" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="MillenniumAi" />
-        <meta property="og:title" content="MillenniumAi | Enterprise AI & Data Annotation Services" />
+        <meta property="og:site_name" content="MillenniumAI" />
+        <meta
+          property="og:title"
+          content="Enterprise AI Data Annotation & Generative AI Services | MillenniumAI"
+        />
         <meta
           property="og:description"
-          content="High-quality AI data annotation and Generative AI services trusted by global enterprises."
+          content="High-quality AI data annotation and Generative AI services designed for enterprise-scale accuracy, security, and performance."
         />
-        <meta property="og:url" content="https://www.millenniumai.com/" />
-        <meta property="og:image" content="https://www.millenniumai.com/og-image.jpg" />
+        <meta property="og:url" content="https://www.millenniumai.in/" />
+        <meta property="og:image" content="https://www.millenniumai.in/og-image.jpg" />
       </Helmet>
 
       <main>
@@ -42,28 +53,30 @@ const HomePage = () => {
         <section className="py-24 bg-[#0a0a0f] text-white">
           <div className="max-w-6xl mx-auto px-6 text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Why Leading AI Teams Choose MillenniumAi
+              Why Leading AI Teams Choose MillenniumAI
             </h2>
+
             <p className="text-gray-400 max-w-3xl mx-auto mb-12 text-lg">
-              MillenniumAi is built for organizations that take AI seriously.
-              We partner with enterprises and high-growth AI teams to deliver
-              reliable, scalable, and production-ready data and engineering
-              solutions that directly improve model accuracy and business outcomes.
+              MillenniumAI partners with enterprises and high-growth AI teams to
+              deliver production-ready datasets and AI engineering services.
+              Our focus is simple: higher model accuracy, faster deployment,
+              and lower operational risk.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
                   title: 'Quality-First Execution',
-                  desc: 'Accuracy is engineered into every stage of our workflow through multi-layer QA, expert validation, and continuous quality monitoring.',
+                  desc: 'Accuracy is embedded into every workflow through multi-layer QA, expert review, and continuous performance validation.',
                 },
                 {
                   title: 'Enterprise-Scale Delivery',
-                  desc: 'Our global delivery model supports rapid scaling across millions of data points without compromising consistency or turnaround time.',
+                  desc: 'We support pilots through multi-million data pipelines with consistent quality, predictable timelines, and SLA-driven execution.',
                 },
                 {
-                  title: 'Security & Compliance',
-                  desc: 'We operate with enterprise-grade security, NDA-backed teams, controlled access, and governance-aligned data handling practices.',
+                  title: 'Security & GDPR-Aligned Practices',
+                  // UPDATED: Explicit but safe wording
+                  desc: 'Our delivery model follows GDPR-aligned data handling practices, NDA-backed teams, controlled access, and client-specific security requirements.',
                 },
               ].map((item) => (
                 <div
@@ -91,20 +104,20 @@ const HomePage = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
                 {
-                  title: 'Requirement & Use-Case Analysis',
-                  desc: 'We align on objectives, edge cases, success metrics, and quality benchmarks before execution begins.',
+                  title: 'Use-Case & Success Alignment',
+                  desc: 'We define objectives, edge cases, accuracy thresholds, and delivery KPIs before execution begins.',
                 },
                 {
                   title: 'Data Preparation & Annotation',
-                  desc: 'Domain-trained teams execute structured annotation workflows using proven tools and best practices.',
+                  desc: 'Domain-trained teams execute structured workflows using industry-proven tools and annotation standards.',
                 },
                 {
                   title: 'Multi-Level Quality Assurance',
-                  desc: 'Automated checks, expert review, and continuous feedback loops ensure consistently high accuracy.',
+                  desc: 'Automated checks, expert audits, and feedback loops ensure consistently high-quality datasets.',
                 },
                 {
-                  title: 'Secure Delivery & Iteration',
-                  desc: 'Versioned datasets are delivered securely with iterative improvements based on real-world model feedback.',
+                  title: 'Secure Delivery & Optimization',
+                  desc: 'Version-controlled datasets are delivered securely with continuous iteration based on model performance.',
                 },
               ].map((step, index) => (
                 <div
@@ -132,14 +145,15 @@ const HomePage = () => {
               Ready to Build Reliable AI at Scale?
             </h2>
             <p className="text-lg mb-10 opacity-90">
-              Whether you are training advanced models, scaling production AI,
-              or enabling Generative AI systems, MillenniumAi provides the
-              data quality, expertise, and execution discipline required to succeed.
+              Start with a pilot or discovery call. We help AI teams validate
+              quality, scale confidently, and deploy production-ready systems
+              without execution risk.
             </p>
+
             <div className="flex justify-center gap-4 flex-wrap">
               <Link to="/contact">
                 <Button size="lg" className="bg-white text-black px-8 py-6">
-                  Talk to an AI Expert
+                  Start a Discovery Call
                 </Button>
               </Link>
               <Link to="/services">
@@ -148,7 +162,7 @@ const HomePage = () => {
                   variant="outline"
                   className="border-white text-white px-8 py-6"
                 >
-                  Explore Our Services
+                  View Capabilities
                 </Button>
               </Link>
             </div>
