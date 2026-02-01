@@ -1,15 +1,19 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
-const CallToAction = () => {
+const CallToAction = ({
+  text = "Let’s turn your AI initiatives into production-ready solutions."
+}) => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.p
-      className='text-md text-white max-w-lg mx-auto'
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.8 }}
+      className="text-md text-white max-w-lg mx-auto text-center"
+      initial={shouldReduceMotion ? false : { opacity: 0 }}
+      animate={shouldReduceMotion ? false : { opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.6 }}
     >
-      Let's turn your ideas into reality.
+      {text}
     </motion.p>
   );
 };
