@@ -8,40 +8,60 @@ const AboutPage = () => {
     {
       icon: Target,
       title: 'Mission-Driven',
-      description: 'Democratizing AI technology and making it accessible to enterprises of all sizes',
+      description:
+        'Delivering enterprise-grade AI capabilities with uncompromising quality, security, and scale.',
     },
     {
       icon: Users,
       title: 'Customer-Centric',
-      description: 'Your success is our success. We build long-term partnerships, not just projects',
+      description:
+        'We build long-term AI partnerships focused on real-world outcomes, not short-term pilots.',
     },
     {
       icon: Award,
       title: 'Quality Excellence',
-      description: 'Uncompromising standards with 99.5% accuracy and rigorous quality controls',
+      description:
+        'Rigorous QA frameworks and human-in-the-loop validation delivering 99.5%+ accuracy.',
     },
     {
       icon: Zap,
       title: 'Innovation First',
-      description: 'Staying at the forefront of AI research and bringing cutting-edge solutions to market',
+      description:
+        'Continuously advancing our capabilities across Generative AI, data, and enterprise AI systems.',
     },
   ];
 
   return (
     <>
       <Helmet>
-        <title>About Us - MillenniumAi</title>
+        <title>About Us | MillenniumAi</title>
         <meta
           name="description"
-          content="Learn about MillenniumAi's mission to deliver quality-driven, trusted AI solutions. Our expertise in AI/ML, data science, and enterprise solutions."
+          content="Learn about MillenniumAi — a trusted enterprise AI partner delivering quality-driven, secure, and scalable AI solutions across industries."
         />
+
+        {/* ORGANIZATION SCHEMA */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "MillenniumAi",
+            "description":
+              "Enterprise AI solutions company specializing in Generative AI, data services, and AI engineering.",
+            "url": "https://millenniumai.com"
+          })}
+        </script>
       </Helmet>
+
       <div className="pt-20">
+
+        {/* ================= HERO ================= */}
         <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 z-0"
             style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1695668548342-c0c1ad479aee)',
+              backgroundImage:
+                'url(https://images.unsplash.com/photo-1695668548342-c0c1ad479aee)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               opacity: 0.2,
@@ -61,13 +81,16 @@ const AboutPage = () => {
                   Future of AI
                 </span>
               </h1>
+
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-                MillenniumAi is a quality-driven, trusted AI partner empowering enterprises to harness the full potential of artificial intelligence and machine learning.
+                MillenniumAi is a trusted enterprise AI partner enabling organizations
+                to deploy reliable, secure, and production-ready AI at scale.
               </p>
             </motion.div>
           </div>
         </section>
 
+        {/* ================= MISSION ================= */}
         <section className="py-20 bg-gradient-to-b from-[#0a0a0f] to-[#1a0a2e]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <motion.div
@@ -75,16 +98,25 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="max-w-4xl mx-auto mb-16"
+              className="max-w-4xl mx-auto mb-16 text-center"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-center">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Our Mission
               </h2>
-              <p className="text-lg text-gray-300 leading-relaxed text-center">
-                At MillenniumAi, we believe that every organization deserves access to world-class AI capabilities. Our mission is to bridge the gap between cutting-edge AI research and practical business applications, delivering solutions that drive real, measurable value. We're committed to maintaining the highest standards of quality, security, and ethical AI practices in everything we do.
+
+              <p className="text-lg text-gray-300 leading-relaxed">
+                At MillenniumAi, our mission is to bridge the gap between cutting-edge
+                AI research and real-world enterprise deployment. We help organizations
+                move from experimentation to production with AI systems that are
+                accurate, compliant, and built for long-term scale.
+              </p>
+
+              <p className="text-sm text-gray-400 mt-4">
+                Trusted by AI-first companies, enterprises, and research teams worldwide.
               </p>
             </motion.div>
 
+            {/* VALUES */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
               {values.map((value, index) => {
                 const Icon = value.icon;
@@ -95,13 +127,19 @@ const AboutPage = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="p-8 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-blue-500/50 transition-all duration-300"
+                    className="p-8 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-blue-500/40 transition"
                   >
                     <div className="flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 mb-6">
                       <Icon className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="text-2xl font-semibold text-white mb-4">{value.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{value.description}</p>
+
+                    <h3 className="text-2xl font-semibold text-white mb-4">
+                      {value.title}
+                    </h3>
+
+                    <p className="text-gray-300 leading-relaxed">
+                      {value.description}
+                    </p>
                   </motion.div>
                 );
               })}
@@ -109,6 +147,7 @@ const AboutPage = () => {
           </div>
         </section>
 
+        {/* ================= CORE EXPERTISE ================= */}
         <section className="py-20 bg-gradient-to-b from-[#1a0a2e] to-[#0a0a0f]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <motion.div
@@ -126,16 +165,19 @@ const AboutPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  title: 'AI/ML Engineering',
-                  description: 'Advanced machine learning models, deep learning architectures, and neural network optimization',
+                  title: 'Generative AI & ML Engineering',
+                  description:
+                    'LLMs, RLHF pipelines, model alignment, evaluation, and safety engineering.',
                 },
                 {
-                  title: 'Data Science',
-                  description: 'Statistical analysis, predictive modeling, and data-driven decision making frameworks',
+                  title: 'Data & AI Operations',
+                  description:
+                    'High-quality training data, annotation, QA frameworks, and scalable AI workflows.',
                 },
                 {
-                  title: 'Enterprise Solutions',
-                  description: 'Scalable, secure, and compliant AI systems designed for enterprise deployment',
+                  title: 'Enterprise AI Systems',
+                  description:
+                    'Secure, compliant, and production-ready AI platforms built for real-world deployment.',
                 },
               ].map((expertise, index) => (
                 <motion.div
@@ -146,13 +188,18 @@ const AboutPage = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="p-8 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 text-center"
                 >
-                  <h3 className="text-2xl font-semibold text-white mb-4">{expertise.title}</h3>
-                  <p className="text-gray-300">{expertise.description}</p>
+                  <h3 className="text-2xl font-semibold text-white mb-4">
+                    {expertise.title}
+                  </h3>
+                  <p className="text-gray-300">
+                    {expertise.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
+
       </div>
     </>
   );
