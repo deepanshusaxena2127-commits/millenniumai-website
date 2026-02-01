@@ -15,61 +15,85 @@ const solutionsData = [
     icon: Heart,
     industry: 'Healthcare',
     useCases: [
-      'Medical image analysis and diagnostic assistance',
-      'Patient data management and predictive analytics',
-      'Drug discovery and clinical trial optimization',
+      'Medical image annotation and diagnostic support workflows',
+      'Patient data analysis and predictive modeling',
+      'Drug discovery and clinical research data preparation',
     ],
-    outcomes: ['30% faster diagnosis', 'Improved patient outcomes', 'HIPAA compliant'],
+    outcomes: [
+      'Faster diagnostic workflows',
+      'Improved clinical insights',
+      'Compliance-aware data handling',
+    ],
   },
   {
     icon: TrendingUp,
     industry: 'Finance',
     useCases: [
-      'Fraud detection and risk assessment',
-      'Algorithmic trading and market prediction',
-      'Customer sentiment analysis and personalization',
+      'Fraud detection and risk modeling datasets',
+      'Market analysis and forecasting support',
+      'Customer sentiment and behavioral analysis',
     ],
-    outcomes: ['95% fraud detection rate', 'Real-time insights', 'Regulatory compliance'],
+    outcomes: [
+      'Improved fraud detection accuracy',
+      'Real-time analytical insights',
+      'Regulatory-aligned workflows',
+    ],
   },
   {
     icon: ShoppingCart,
     industry: 'Retail',
     useCases: [
       'Demand forecasting and inventory optimization',
-      'Personalized product recommendations',
-      'Customer behavior analysis and churn prediction',
+      'Personalized recommendation systems',
+      'Customer behavior and churn analysis',
     ],
-    outcomes: ['25% increase in sales', 'Reduced inventory costs', 'Enhanced CX'],
+    outcomes: [
+      'Revenue optimization opportunities',
+      'Reduced inventory inefficiencies',
+      'Enhanced customer experience',
+    ],
   },
   {
     icon: Factory,
     industry: 'Manufacturing',
     useCases: [
-      'Predictive maintenance and quality control',
-      'Supply chain optimization',
-      'Defect detection with computer vision',
+      'Predictive maintenance and quality monitoring',
+      'Supply chain data optimization',
+      'Computer vision–based defect detection',
     ],
-    outcomes: ['40% less downtime', 'Cost reduction', 'Zero-defect production'],
+    outcomes: [
+      'Reduced operational downtime',
+      'Improved production efficiency',
+      'Enhanced quality control',
+    ],
   },
   {
     icon: Car,
     industry: 'Automotive',
     useCases: [
-      'Autonomous vehicle perception systems',
-      'Driver assistance and safety features',
-      'Vehicle diagnostics and fleet management',
+      'Autonomous and ADAS perception datasets',
+      'Driver assistance and safety analytics',
+      'Vehicle diagnostics and fleet intelligence',
     ],
-    outcomes: ['Enhanced safety', 'Reduced accidents', 'Optimized operations'],
+    outcomes: [
+      'Enhanced vehicle safety',
+      'Improved operational efficiency',
+      'Scalable AI deployment support',
+    ],
   },
   {
     icon: Building2,
-    industry: 'Government/Public Sector',
+    industry: 'Government & Public Sector',
     useCases: [
-      'Smart city infrastructure and traffic management',
-      'Public safety and surveillance systems',
-      'Citizen services automation and optimization',
+      'Smart city data platforms and traffic analytics',
+      'Public safety and surveillance data processing',
+      'Citizen service automation and optimization',
     ],
-    outcomes: ['Improved efficiency', 'Cost savings', 'Better citizen services'],
+    outcomes: [
+      'Operational efficiency improvements',
+      'Data-driven decision support',
+      'Secure and privacy-aware systems',
+    ],
   },
 ];
 
@@ -91,13 +115,18 @@ const Solutions = () => {
             </span>
           </h2>
           <p className="text-lg text-gray-300">
-            Tailored AI solutions designed for your industry's unique challenges and opportunities
+            AI solutions tailored to industry-specific data, operational,
+            and regulatory requirements.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {solutionsData.map((solution, index) => (
-            <SolutionCard key={solution.industry} solution={solution} index={index} />
+            <SolutionCard
+              key={solution.industry}
+              solution={solution}
+              index={index}
+            />
           ))}
         </div>
       </div>
