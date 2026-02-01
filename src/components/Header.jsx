@@ -1,36 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { useToast } from '@/components/ui/use-toast';
 
-const Header = ({ onScrollTo }) => {
-  const { toast } = useToast();
-
-  const navItems = ['Features', 'Solutions', 'Pricing'];
-
-  const handleNavClick = (item) => {
-    const section = item.toLowerCase();
-
-    if (
-      section === 'features' ||
-      section === 'solutions' ||
-      section === 'pricing'
-    ) {
-      onScrollTo(section);
-    } else {
-      toast({
-        title:
-          'This functionality is not added yet, but you can add it with your next prompts ❤️',
-      });
-    }
-  };
-
-  const handleSignIn = () => {
-    toast({
-      title:
-        'This functionality is not added yet, but you can add it with your next prompts ❤️',
-    });
-  };
+const Header = () => {
+  const navItems = [
+    { name: 'Services', path: '/services' },
+    { name: 'Industries', path: '/industries' },
+    { name: 'Company', path: '/company/inside-millenniumai' },
+    { name: 'Insights', path: '/insights/insights-hub' },
+  ];
 
   return (
     <motion.header
@@ -38,43 +17,42 @@ const Header = ({ onScrollTo }) => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className="fixed top-0 left-0 right-0 z-50 px-6 py-4
-           bg-primary-dark
-           backdrop-blur-xl border-b border-white/10"
-
+                 bg-primary-dark backdrop-blur-xl border-b border-white/10"
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        
+
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-full border-2 border-blue-500 flex items-center justify-center">
             <div className="w-3 h-3 rounded-full bg-blue-500" />
           </div>
-          <span className="text-xl font-light">Eclipse</span>
-        </div>
+          <span className="text-xl font-semibold text-white tracking-wide">
+            MillenniumAI
+          </span>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <button
-              key={item}
-              onClick={() => handleNavClick(item)}
-              className="text-gray-300 hover:text-white
-                         transition-colors duration-200 text-sm"
+            <Link
+              key={item.name}
+              to={item.path}
+              className="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium"
             >
-              {item}
-            </button>
+              {item.name}
+            </Link>
           ))}
         </nav>
 
-        {/* Right Actions */}
+        {/* CTA */}
         <div className="flex items-center gap-4">
-          <Button
-            onClick={handleSignIn}
-            variant="outline"
-            className="border-white/10 hover:bg-white/5 text-white"
-          >
-            Sign in
-          </Button>
+          <Link to="/contact">
+            <Button
+              className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-5"
+            >
+              Talk to an Expert
+            </Button>
+          </Link>
         </div>
       </div>
     </motion.header>
