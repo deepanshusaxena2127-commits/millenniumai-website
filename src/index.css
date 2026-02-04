@@ -27,7 +27,7 @@ body {
 @layer base {
   :root {
     /* PRIMARY DARK PALETTE */
-    --primary-dark: 224 71% 4%;
+    --primary-dark: 222 100% 10%;
     --primary-dark-sec: 220 39% 11%;
     --primary-dark-ter: 228 86% 5%;
 
