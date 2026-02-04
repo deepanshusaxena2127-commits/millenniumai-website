@@ -99,27 +99,28 @@ const solutionsData = [
 
 const Solutions = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-[#1a0a2e] to-[#0a0a0f]">
+    <section className="py-20 bg-white border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+        {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Industry-Specific{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Solutions
-            </span>
+            <span className="text-blue-600">Solutions</span>
           </h2>
-          <p className="text-lg text-gray-300">
+          <p className="text-lg text-slate-600">
             AI solutions tailored to industry-specific data, operational,
             and regulatory requirements.
           </p>
         </motion.div>
 
+        {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {solutionsData.map((solution, index) => (
             <SolutionCard
@@ -129,6 +130,7 @@ const Solutions = () => {
             />
           ))}
         </div>
+
       </div>
     </section>
   );
