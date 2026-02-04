@@ -62,7 +62,7 @@ const testimonials = [
 
 const TrustSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-[#0a0a0f] to-[#1a0a2e]">
+    <section className="py-16 md:py-24 bg-white border-t">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* HEADER */}
