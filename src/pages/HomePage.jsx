@@ -22,59 +22,29 @@ const HomePage = () => {
 
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.millenniumai.in/" />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="MillenniumAI" />
-        <meta
-          property="og:title"
-          content="Enterprise AI Data Annotation & Generative AI Services | MillenniumAI"
-        />
-        <meta
-          property="og:description"
-          content="Enterprise-focused AI data annotation and Generative AI services designed for accuracy, governance, and scale."
-        />
-        <meta property="og:url" content="https://www.millenniumai.in/" />
-        <meta
-          property="og:image"
-          content="https://www.millenniumai.in/og-image.jpg"
-        />
-
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Organization',
-            name: 'MillenniumAI',
-            url: 'https://www.millenniumai.in',
-            logo: 'https://www.millenniumai.in/logo.png',
-            description:
-              'Enterprise AI data annotation and Generative AI services for production-grade AI systems.',
-            sameAs: [],
-          })}
-        </script>
       </Helmet>
 
-      <main role="main">
+      <main role="main" className="bg-white text-slate-900">
 
-        {/* HERO */}
+        {/* HERO (WHITE) */}
         <Hero />
 
-        {/* CORE SERVICES */}
-        <Services />
+        {/* CORE SERVICES (WHITE) */}
+        <section className="py-24 bg-white">
+          <Services />
+        </section>
 
-        {/* WHY MILLENNIUMAI */}
-        <section className="py-24 bg-[#0a0a0f] text-white">
+        {/* WHY MILLENNIUMAI (LIGHT) */}
+        <section className="py-24 bg-[#f8f9fc]">
           <div className="max-w-6xl mx-auto px-6 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#050516]">
               Why Leading AI Teams Choose MillenniumAI
             </h2>
 
-            <p className="text-gray-400 max-w-3xl mx-auto mb-12 text-lg">
+            <p className="text-slate-600 max-w-3xl mx-auto mb-12 text-lg">
               MillenniumAI partners with enterprises and high-growth AI teams to
-              deliver production-ready datasets and AI engineering services.
-              Our engagement model is designed to improve model accuracy,
-              accelerate deployment, and reduce execution risk.
+              deliver production-ready datasets and AI engineering services with
+              predictable quality, security, and scale.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -87,80 +57,82 @@ const HomePage = () => {
                 {
                   title: 'Enterprise-Scale Delivery',
                   desc:
-                    'From pilot datasets to multi-million data pipelines, we deliver consistent quality with predictable SLAs and timelines.',
+                    'From pilot datasets to multi-million data pipelines, we deliver consistent quality with predictable SLAs.',
                 },
                 {
-                  title: 'Security & Compliance-Aware',
+                  title: 'Security & Compliance',
                   desc:
-                    'GDPR-aligned workflows, NDA-backed teams, controlled access, and client-specific security requirements.',
+                    'GDPR-aligned workflows, NDA-backed teams, and client-specific security controls.',
                 },
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="p-8 rounded-2xl bg-white/5 border border-white/10"
+                  className="p-8 rounded-2xl bg-white border border-slate-200"
                 >
-                  <h3 className="text-xl font-semibold mb-3">
+                  <h3 className="text-xl font-semibold mb-3 text-[#050516]">
                     {item.title}
                   </h3>
-                  <p className="text-gray-400">{item.desc}</p>
+                  <p className="text-slate-600">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* SOLUTIONS / INDUSTRIES */}
-        <Solutions />
+        {/* SOLUTIONS / INDUSTRIES (WHITE) */}
+        <section className="py-24 bg-white">
+          <Solutions />
+        </section>
 
-        {/* DELIVERY PROCESS */}
-        <section className="py-24 bg-[#0f0f16] text-white">
+        {/* DELIVERY PROCESS (LIGHT) */}
+        <section className="py-24 bg-[#f8f9fc]">
           <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-[#050516]">
               Our AI Data & Engineering Delivery Process
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
                 {
-                  title: 'Use-Case & Success Alignment',
+                  title: 'Use-Case Alignment',
                   desc:
-                    'We define objectives, edge cases, accuracy thresholds, security needs, and delivery KPIs before execution begins.',
+                    'Define objectives, edge cases, accuracy thresholds, and KPIs before execution.',
                 },
                 {
-                  title: 'Data Preparation & Annotation',
+                  title: 'Data Preparation',
                   desc:
-                    'Domain-trained teams execute structured annotation workflows using proven tools and standardized guidelines.',
+                    'Domain-trained teams execute structured annotation workflows.',
                 },
                 {
-                  title: 'Multi-Level Quality Assurance',
+                  title: 'Quality Assurance',
                   desc:
-                    'Automated checks, expert audits, and feedback loops ensure consistently high-quality production datasets.',
+                    'Automated checks combined with expert human audits.',
                 },
                 {
-                  title: 'Secure Delivery & Iteration',
+                  title: 'Secure Delivery',
                   desc:
-                    'Version-controlled datasets are delivered securely with continuous iteration based on real-world model feedback.',
+                    'Versioned datasets delivered securely with iteration loops.',
                 },
               ].map((step, index) => (
                 <div
                   key={step.title}
-                  className="p-6 rounded-xl bg-white/5 border border-white/10"
+                  className="p-6 rounded-xl bg-white border border-slate-200"
                 >
-                  <div className="text-blue-400 font-bold text-lg mb-2">
+                  <div className="text-blue-600 font-bold mb-2">
                     Step {index + 1}
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">
+                  <h3 className="font-semibold mb-2 text-[#050516]">
                     {step.title}
                   </h3>
-                  <p className="text-gray-400 text-sm">{step.desc}</p>
+                  <p className="text-slate-600 text-sm">{step.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* TRUST CONTEXT */}
-        <section className="py-12 bg-[#0a0a0f] text-center text-gray-400">
+        {/* TRUST CONTEXT (LIGHT) */}
+        <section className="py-12 bg-white text-center text-slate-500">
           <div className="max-w-4xl mx-auto px-6 text-sm">
             Metrics and testimonials reflect anonymized enterprise and
             mid-market client engagements across regulated and non-regulated
@@ -168,19 +140,20 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* TRUST SECTION */}
-        <TrustSection />
+        {/* TRUST SECTION (LIGHT WRAPPER) */}
+        <section className="py-24 bg-white">
+          <TrustSection />
+        </section>
 
-        {/* FINAL CTA */}
+        {/* FINAL CTA (KEEP GRADIENT – HIGH CONVERSION) */}
         <section className="py-24 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Build Reliable AI at Scale?
             </h2>
             <p className="text-lg mb-10 opacity-90">
-              Start with a pilot or discovery call. We help AI teams validate
-              data quality, scale confidently, and deploy production-ready AI
-              systems without execution risk.
+              Start with a discovery call. We help AI teams deploy
+              production-ready AI systems without execution risk.
             </p>
 
             <div className="flex justify-center gap-4 flex-wrap">
@@ -201,6 +174,7 @@ const HomePage = () => {
             </div>
           </div>
         </section>
+
       </main>
     </>
   );
