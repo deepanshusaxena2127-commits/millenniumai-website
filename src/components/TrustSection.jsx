@@ -3,9 +3,6 @@ import { motion } from 'framer-motion';
 import TestimonialCard from '@/components/TestimonialCard';
 import { Shield, Award, Zap, Target, Clock, Lock } from 'lucide-react';
 
-/* =========================
-   TRUST METRICS (SAFE)
-   ========================= */
 const trustMetrics = [
   {
     icon: Target,
@@ -33,9 +30,6 @@ const trustMetrics = [
   },
 ];
 
-/* =========================
-   TESTIMONIALS (ANONYMIZED)
-   ========================= */
 const testimonials = [
   {
     quote:
@@ -62,24 +56,21 @@ const testimonials = [
 
 const TrustSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-white border-t">
+    <section className="py-20 bg-white border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Why{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Trust Us
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            Why <span className="text-blue-600">Trust Us</span>
           </h2>
-          <p className="text-lg text-gray-300">
+          <p className="text-lg text-slate-600">
             Quality-driven execution, security-aware workflows, and scalable AI delivery
             for enterprise teams.
           </p>
@@ -92,19 +83,19 @@ const TrustSection = () => {
             return (
               <motion.div
                 key={metric.title}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center p-6 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-blue-500/50 transition-all duration-300"
+                className="p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:shadow-md transition"
               >
-                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 mx-auto mb-4">
-                  <Icon className="w-8 h-8 text-white" />
+                <div className="flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 mx-auto mb-4">
+                  <Icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">
                   {metric.title}
                 </h3>
-                <p className="text-gray-400 text-sm">
+                <p className="text-sm text-slate-600">
                   {metric.description}
                 </p>
               </motion.div>
@@ -113,59 +104,47 @@ const TrustSection = () => {
         </div>
 
         {/* TESTIMONIALS HEADER */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="mb-12 text-center"
-        >
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
+        <div className="text-center mb-12">
+          <h3 className="text-3xl font-bold text-slate-900 mb-2">
             What Our Clients Say
           </h3>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-slate-500">
             Testimonials are anonymized due to confidentiality and NDA obligations.
           </p>
-        </motion.div>
+        </div>
 
         {/* TESTIMONIALS */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard
-              key={`${testimonial.author}-${index}`}
+              key={index}
               testimonial={testimonial}
               index={index}
             />
           ))}
         </div>
 
-        {/* COMPLIANCE & TRUST BADGES (SAFE) */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 flex flex-wrap justify-center items-center gap-8"
-        >
-          <div className="flex items-center gap-3 px-6 py-3 rounded-lg bg-white/5 border border-white/10">
-            <Shield className="w-6 h-6 text-blue-400" />
-            <span className="text-sm font-semibold text-gray-300">
-              GDPR-Aligned Data Handling
-            </span>
-          </div>
-          <div className="flex items-center gap-3 px-6 py-3 rounded-lg bg-white/5 border border-white/10">
-            <Clock className="w-6 h-6 text-blue-400" />
-            <span className="text-sm font-semibold text-gray-300">
-              24/7 Global Delivery
-            </span>
-          </div>
-          <div className="flex items-center gap-3 px-6 py-3 rounded-lg bg-white/5 border border-white/10">
-            <Lock className="w-6 h-6 text-blue-400" />
-            <span className="text-sm font-semibold text-gray-300">
-              NDA-Backed Engagements
-            </span>
-          </div>
-        </motion.div>
+        {/* COMPLIANCE BADGES */}
+        <div className="mt-16 flex flex-wrap justify-center gap-6">
+          {[
+            { icon: Shield, text: 'GDPR-Aligned Data Handling' },
+            { icon: Clock, text: '24/7 Global Delivery' },
+            { icon: Lock, text: 'NDA-Backed Engagements' },
+          ].map((item, i) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={i}
+                className="flex items-center gap-3 px-6 py-3 rounded-lg border border-slate-200 bg-slate-50"
+              >
+                <Icon className="w-5 h-5 text-blue-600" />
+                <span className="text-sm font-medium text-slate-700">
+                  {item.text}
+                </span>
+              </div>
+            );
+          })}
+        </div>
 
       </div>
     </section>
