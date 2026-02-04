@@ -26,10 +26,12 @@ body {
    ========================= */
 @layer base {
   :root {
-    /* ✅ PROFESSIONAL DARK SECONDARY */
-    --dark-secondary: 240 13% 5%; /* #050516 */
+    /* PRIMARY DARK PALETTE */
+    --primary-dark: 224 71% 4%;
+    --primary-dark-sec: 220 39% 11%;
+    --primary-dark-ter: 228 86% 5%;
 
-    /* LIGHT PALETTE (HOME & HERO) */
+    /* LIGHT PALETTE */
     --background: 210 20% 98%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
@@ -39,9 +41,11 @@ body {
     --foreground-light: 0 0% 100%;
     --muted-foreground: 215 16% 47%;
 
-    /* BRAND */
+    /* ACCENTS */
     --primary: 221 83% 53%;
     --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
     --accent: 265 83% 70%;
     --accent-foreground: 210 40% 98%;
 
@@ -71,41 +75,63 @@ body {
 }
 
 /* =========================
-   Utilities
+   Utility Classes
    ========================= */
 @layer utilities {
   .text-gradient {
     background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  .bg-dark-secondary {
-    background-color: hsl(var(--dark-secondary));
+  .text-gradient-hero {
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  .text-dark-secondary {
-    color: hsl(var(--dark-secondary));
+  .bg-gradient-brand {
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  }
+
+  .bg-gradient-dark {
+    background: linear-gradient(135deg, #111827 0%, #0a0a0f 50%, #020617 100%);
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .glass-panel-dark {
+    background: rgba(10, 10, 15, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .smooth-transition {
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
 /* =========================
-   Scrollbar
+   Scrollbar Styling
    ========================= */
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: #f1f5f9;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 5px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
