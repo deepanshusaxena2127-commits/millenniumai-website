@@ -18,22 +18,23 @@ const HomePage = () => {
         />
       </Helmet>
 
-      <main className="bg-white">
+      {/* Set a single consistent dark background for the homepage */}
+      <main className="bg-gradient-to-b from-[#0a0a0f] to-[#1a0a2e] text-white">
 
-        {/* HERO (already light) */}
+        {/* HERO */}
         <Hero />
 
-        {/* SERVICES (already fixed) */}
+        {/* SERVICES */}
         <Services />
 
         {/* WHY MILLENNIUMAI */}
-        <section className="py-24 bg-white">
+        <section className="py-24">
           <div className="max-w-6xl mx-auto px-6 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#050516] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Why Leading AI Teams Choose MillenniumAI
             </h2>
 
-            <p className="text-slate-600 max-w-3xl mx-auto mb-12 text-lg">
+            <p className="text-gray-300 max-w-3xl mx-auto mb-12 text-lg">
               MillenniumAI partners with enterprises and AI-first companies to
               deliver production-grade datasets and AI engineering services with
               predictable quality and scale.
@@ -59,25 +60,25 @@ const HomePage = () => {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="p-8 rounded-2xl border border-slate-200 bg-white shadow-sm"
+                  className="p-8 rounded-2xl border border-slate-700 bg-transparent shadow-sm"
                 >
-                  <h3 className="text-xl font-semibold text-[#050516] mb-3">
+                  <h3 className="text-xl font-semibold text-white mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-slate-600">{item.desc}</p>
+                  <p className="text-gray-300">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* INDUSTRY SOLUTIONS (white now) */}
+        {/* INDUSTRY SOLUTIONS */}
         <Solutions />
 
         {/* DELIVERY PROCESS */}
-        <section className="py-24 bg-white">
+        <section className="py-24">
           <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-center text-[#050516] mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-16">
               Our AI Data & Engineering Delivery Process
             </h2>
 
@@ -99,52 +100,18 @@ const HomePage = () => {
                   title: 'Secure Delivery',
                   desc: 'Versioned datasets delivered securely and iteratively.',
                 },
-              ].map((step, index) => (
-                <div
-                  key={step.title}
-                  className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm"
-                >
-                  <div className="text-blue-600 font-bold mb-2">
-                    Step {index + 1}
-                  </div>
-                  <h3 className="text-lg font-semibold text-[#050516] mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-slate-600 text-sm">{step.desc}</p>
+              ].map((step) => (
+                <div key={step.title} className="p-6 rounded-xl bg-transparent border border-slate-700">
+                  <h3 className="text-lg font-semibold text-white mb-2">{step.title}</h3>
+                  <p className="text-gray-300">{step.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* TRUST SECTION (white version) */}
+        {/* TRUST SECTION */}
         <TrustSection />
-
-        {/* FINAL CTA */}
-        <section className="py-24 bg-slate-50 text-center">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#050516] mb-6">
-              Ready to Build Reliable AI at Scale?
-            </h2>
-            <p className="text-lg text-slate-600 mb-10">
-              Start with a discovery call and deploy production-ready AI systems
-              with confidence.
-            </p>
-
-            <div className="flex justify-center gap-4 flex-wrap">
-              <Link to="/contact">
-                <Button size="lg" className="px-8 py-6">
-                  Start a Discovery Call
-                </Button>
-              </Link>
-              <Link to="/services">
-                <Button size="lg" variant="outline" className="px-8 py-6">
-                  View Capabilities
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
 
       </main>
     </>
