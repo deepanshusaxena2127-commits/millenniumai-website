@@ -26,7 +26,7 @@ body {
    ========================= */
 @layer base {
   :root {
-    /* PRIMARY DARK PALETTE */
+    /* PRIMARY DARK PALETTE (ULTRA DARK NAVY) */
     --primary-dark: 222 100% 3%;
     --primary-dark-sec: 220 39% 11%;
     --primary-dark-ter: 228 86% 5%;
@@ -99,6 +99,7 @@ body {
     background: linear-gradient(135deg, #111827 0%, #0a0a0f 50%, #020617 100%);
   }
 
+  /* Glass utilities (USED ELSEWHERE – NOT HEADER) */
   .glass-panel {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(12px);
@@ -141,4 +142,13 @@ body {
    ========================= */
 ::selection {
   background: rgba(37, 99, 235, 0.2);
+}
+
+/* =========================
+   FORCE SOLID HEADER (FINAL FIX)
+   ========================= */
+header {
+  background-color: hsl(var(--primary-dark)) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
