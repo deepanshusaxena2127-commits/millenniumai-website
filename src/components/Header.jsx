@@ -24,7 +24,7 @@ const Header = () => {
     px-6 py-4
     border-b border-white/10
     transition-all duration-300
-    bg-primary-dark
+    bg-red-600
   `}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
