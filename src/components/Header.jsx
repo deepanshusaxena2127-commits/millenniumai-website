@@ -5,8 +5,6 @@ import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const location = useLocation();
-
-  // Check if current page is Home
   const isHome = location.pathname === '/';
 
   const navItems = [
@@ -25,10 +23,10 @@ const Header = () => {
         fixed top-0 left-0 right-0 z-50
         px-6 py-4
         border-b border-white/10
-        transition-colors duration-300
+        transition-all duration-300
         ${
           isHome
-            ? 'bg-transparent'
+            ? 'bg-white/70 backdrop-blur-xl'
             : 'bg-primary-dark'
         }
       `}
@@ -37,25 +35,13 @@ const Header = () => {
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <div
-            className={`
-              w-8 h-8 rounded-full border-2
-              ${isHome ? 'border-blue-600' : 'border-blue-500'}
-              flex items-center justify-center
-            `}
-          >
-            <div
-              className={`
-                w-3 h-3 rounded-full
-                ${isHome ? 'bg-blue-600' : 'bg-blue-500'}
-              `}
-            />
+          <div className="w-8 h-8 rounded-full border-2 border-blue-600 flex items-center justify-center">
+            <div className="w-3 h-3 rounded-full bg-blue-600" />
           </div>
           <span
-            className={`
-              text-xl font-semibold tracking-wide
-              ${isHome ? 'text-white' : 'text-white'}
-            `}
+            className={`text-xl font-semibold tracking-wide ${
+              isHome ? 'text-slate-900' : 'text-white'
+            }`}
           >
             MillenniumAI
           </span>
@@ -67,10 +53,11 @@ const Header = () => {
             <Link
               key={item.name}
               to={item.path}
-              className={`
-                text-sm font-medium transition-colors duration-200
-                ${isHome ? 'text-white hover:text-blue-400' : 'text-gray-300 hover:text-white'}
-              `}
+              className={`text-sm font-medium transition-colors duration-200 ${
+                isHome
+                  ? 'text-slate-600 hover:text-blue-600'
+                  : 'text-gray-300 hover:text-white'
+              }`}
             >
               {item.name}
             </Link>
@@ -80,16 +67,8 @@ const Header = () => {
         {/* CTA */}
         <div className="flex items-center gap-4">
           <Link to="/contact">
-            <Button
-              className={`
-                font-semibold px-5
-                ${isHome
-                  ? 'bg-blue-600 hover:bg-blue-500 text-white'
-                  : 'bg-blue-600 hover:bg-blue-500 text-white'
-                }
-              `}
-            >
-              Talk to an Expert
+            <Button className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-5">
+              Contact Us
             </Button>
           </Link>
         </div>
