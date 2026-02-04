@@ -5,109 +5,105 @@ import { Link } from "react-router-dom";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-white">
-
-      {/* ===== Animated background grid ===== */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:64px_64px] opacity-[0.25]" />
-
-      {/* ===== Animated gradient orbs ===== */}
-      <motion.div
-        animate={{ x: [0, 60, 0], y: [0, -40, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-blue-200/40 blur-3xl"
-      />
-      <motion.div
-        animate={{ x: [0, -60, 0], y: [0, 40, 0] }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -bottom-40 -right-40 h-[520px] w-[520px] rounded-full bg-purple-200/40 blur-3xl"
+      {/* BACKGROUND GRID */}
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
       />
 
-      {/* ===== Content ===== */}
-      <div className="relative mx-auto max-w-7xl px-6 pt-36 pb-28">
+      {/* GRADIENT ORBS */}
+      <div className="absolute -top-40 -left-40 w-[520px] h-[520px] bg-blue-500/20 rounded-full blur-3xl" />
+      <div className="absolute top-1/3 -right-40 w-[520px] h-[520px] bg-purple-500/20 rounded-full blur-3xl" />
 
-        {/* Eyebrow */}
-        <motion.p
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="text-center mb-5 text-sm font-semibold tracking-widest uppercase text-blue-600"
-        >
-          Enterprise-Grade AI
-        </motion.p>
+      <div className="relative max-w-7xl mx-auto px-6 pt-40 pb-32 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
-        {/* Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto max-w-5xl text-center text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900"
-        >
-          Enterprise-Grade AI{" "}
-          <span className="relative inline-block text-blue-600">
-            Data & Engineering
-            <span className="absolute -bottom-2 left-0 h-1 w-full bg-blue-200 rounded-full" />
-          </span>
-        </motion.h1>
-
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mx-auto mt-8 max-w-3xl text-center text-lg text-slate-600 leading-relaxed"
-        >
-          Reliable training data, scalable AI pipelines, and production-ready
-          execution for Generative AI, Computer Vision, and NLP systems.
-        </motion.p>
-
-        {/* CTAs */}
+        {/* LEFT CONTENT */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6"
+          transition={{ duration: 0.7 }}
         >
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-10 py-4 text-base font-semibold text-white shadow-xl hover:bg-blue-500 transition"
-          >
-            Talk to an Expert
-            <ArrowRight className="h-5 w-5" />
-          </Link>
+          <span className="inline-block mb-5 text-sm font-semibold tracking-widest text-blue-600 uppercase">
+            Enterprise-Grade AI
+          </span>
 
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-10 py-4 text-base font-semibold text-slate-900 hover:bg-slate-50 transition"
-          >
-            Explore Services
-          </Link>
+          <h1 className="text-5xl md:text-6xl xl:text-7xl font-extrabold leading-tight text-slate-900">
+            Enterprise-Grade AI{" "}
+            <span className="block text-blue-600">Data & Engineering</span>
+          </h1>
+
+          <p className="mt-8 max-w-xl text-lg text-slate-600">
+            Reliable training data, scalable AI pipelines, and production-ready
+            execution for Generative AI, Computer Vision, and NLP systems.
+          </p>
+
+          {/* CTA */}
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-blue-600 text-white font-semibold shadow-lg hover:bg-blue-500 transition"
+            >
+              Talk to an Expert <ArrowRight className="w-5 h-5" />
+            </Link>
+
+            <Link
+              to="/solutions"
+              className="inline-flex items-center px-8 py-4 rounded-xl border border-slate-300 font-semibold text-slate-800 hover:bg-slate-50 transition"
+            >
+              Explore Services
+            </Link>
+          </div>
+
+          {/* STATS */}
+          <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6">
+            {[
+              ["99.5%", "QA Accuracy"],
+              ["100+", "Enterprise Engagements"],
+              ["24/7", "Global Delivery"],
+              ["30K+", "Assets / Month"],
+            ].map(([value, label]) => (
+              <div
+                key={label}
+                className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+              >
+                <p className="text-2xl font-bold text-slate-900">{value}</p>
+                <p className="text-sm text-slate-500 mt-1">{label}</p>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
-        {/* Stats */}
+        {/* RIGHT VISUAL SYSTEM */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative hidden lg:block"
         >
-          {[
-            { value: "99.5%", label: "QA Accuracy" },
-            { value: "100+", label: "Enterprise Engagements" },
-            { value: "24/7", label: "Global Delivery" },
-            { value: "30K+", label: "Assets / Month" },
-          ].map((stat) => (
-            <motion.div
-              key={stat.label}
-              whileHover={{ y: -6 }}
-              className="rounded-2xl border border-slate-200 bg-white px-6 py-7 text-center shadow-sm hover:shadow-md transition"
-            >
-              <p className="text-3xl font-bold text-slate-900">
-                {stat.value}
-              </p>
-              <p className="mt-2 text-sm text-slate-500">
-                {stat.label}
-              </p>
-            </motion.div>
-          ))}
+          <div className="relative w-full h-[420px] rounded-3xl bg-gradient-to-br from-blue-600/10 to-purple-600/10 border border-slate-200 shadow-xl backdrop-blur">
+
+            {/* FLOATING NODES */}
+            {[...Array(6)].map((_, i) => (
+              <motion.span
+                key={i}
+                className="absolute w-3 h-3 rounded-full bg-blue-600"
+                style={{
+                  top: `${20 + i * 10}%`,
+                  left: `${15 + i * 12}%`,
+                }}
+                animate={{ y: [0, -12, 0] }}
+                transition={{
+                  duration: 3 + i,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            ))}
+          </div>
         </motion.div>
 
       </div>
