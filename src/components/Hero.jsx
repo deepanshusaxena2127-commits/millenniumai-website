@@ -4,19 +4,21 @@ import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-background">
+    /**
+     * pt-28 reserves space for the fixed header
+     * so nothing visually overlaps it
+     */
+    <section className="relative overflow-hidden bg-background pt-28">
 
-      {/* 🔑 HEADER CONTRAST OVERLAY (THIS IS THE FIX) */}
-      <div className="pointer-events-none absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-black/60 to-transparent z-10" />
-
-      {/* Background gradients */}
-      <div className="pointer-events-none absolute inset-0">
+      {/* Background gradients (CLIPPED BELOW HEADER) */}
+      <div className="pointer-events-none absolute inset-x-0 top-28 bottom-0">
         <div className="absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full bg-blue-200/40 blur-3xl" />
         <div className="absolute -bottom-32 -right-32 h-[500px] w-[500px] rounded-full bg-purple-200/40 blur-3xl" />
       </div>
 
       {/* Content */}
-      <div className="relative z-20 mx-auto max-w-7xl px-6 py-28 text-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-28 text-center">
+        
         {/* Eyebrow */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -102,6 +104,7 @@ export default function Hero() {
             </p>
           </div>
         </motion.div>
+
       </div>
     </section>
   );
