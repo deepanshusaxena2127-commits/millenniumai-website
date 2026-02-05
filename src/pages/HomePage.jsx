@@ -45,12 +45,11 @@ const HomePage = () => {
         <SectionDivider variant="gradient" />
 
         {/* =========================
-            ENGAGEMENT MODELS — HOW WE WORK
-           (REPLACES DELIVERY/SCALE DUPLICATION)
-           ========================= */}
-        <EnterpriseEngagementModels />
-
-        <SectionDivider variant="gradient" />
+    ENGAGEMENT MODELS — HOW WE WORK
+   ========================= */}
+<div className="bg-[#F2F0EF] relative isolate">
+  <EnterpriseEngagementModels />
+</div>
 
         {/* =========================
             VALUE — WHY MILLENNIUMAI
