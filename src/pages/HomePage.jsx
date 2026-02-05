@@ -1,10 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+
 import Hero from '@/components/Hero';
 import SectionDivider from '@/components/SectionDivider';
 import MillenniumAiProductionSystem from '@/components/MillenniumAiProductionSystem';
 import PremiumServicesShowcase from '@/components/PremiumServicesShowcase';
-import EnterpriseGradeDeliveryQualityGovernance from '@/components/EnterpriseGradeDeliveryQualityGovernance';
+import EnterpriseEngagementModels from '@/components/EnterpriseEngagementModels';
 import PremiumValueProp from '@/components/PremiumValueProp';
 import Solutions from '@/components/Solutions';
 import PremiumTestimonials from '@/components/PremiumTestimonials';
@@ -12,52 +13,62 @@ import PremiumTestimonials from '@/components/PremiumTestimonials';
 const HomePage = () => {
   return (
     <>
+      {/* SEO / Metadata */}
       <Helmet>
-        <title>MillenniumAi | Enterprise AI Data & Generative AI Services</title>
+        <title>MillenniumAi | Production AI Data & Enterprise AI Services</title>
         <meta
           name="description"
-          content="Production-ready AI data annotation, Generative AI, computer vision, NLP, and ML engineering services for enterprise organizations."
+          content="MillenniumAi provides production-grade AI data pipelines, Generative AI services, and governed AI infrastructure for enterprises operating in regulated environments."
         />
       </Helmet>
 
       <main className="bg-[#F2F0EF] text-slate-900 overflow-hidden">
-        {/* HERO SECTION - Premium entrance */}
+        {/* =========================
+            HERO — PRIMARY POSITIONING
+           ========================= */}
         <Hero />
 
-        {/* DIVIDER */}
         <SectionDivider variant="gradient" />
 
-        {/* PRODUCTION SYSTEM - System architecture flow */}
+        {/* =========================
+            SYSTEM — HOW PRODUCTION AI RUNS
+           ========================= */}
         <MillenniumAiProductionSystem />
 
-        {/* DIVIDER */}
         <SectionDivider variant="gradient" />
 
-        {/* CORE AI CAPABILITIES - System capabilities, not services */}
+        {/* =========================
+            CAPABILITIES — WHAT WE DO
+           ========================= */}
         <PremiumServicesShowcase />
 
-        {/* DIVIDER */}
         <SectionDivider variant="gradient" />
 
-        {/* ENTERPRISE-GRADE DELIVERY, QUALITY & GOVERNANCE - Merged infrastructure layer */}
-        <EnterpriseGradeDeliveryQualityGovernance />
+        {/* =========================
+            ENGAGEMENT MODELS — HOW WE WORK
+           (REPLACES DELIVERY/SCALE DUPLICATION)
+           ========================= */}
+        <EnterpriseEngagementModels />
 
-        {/* DIVIDER */}
         <SectionDivider variant="gradient" />
 
-        {/* VALUE PROPOSITION - Why choose us */}
+        {/* =========================
+            VALUE — WHY MILLENNIUMAI
+           ========================= */}
         <PremiumValueProp />
 
-        {/* DIVIDER */}
         <SectionDivider variant="gradient" />
 
-        {/* INDUSTRY SOLUTIONS - Vertical coverage */}
+        {/* =========================
+            INDUSTRIES — WHERE WE OPERATE
+           ========================= */}
         <Solutions />
 
-        {/* DIVIDER */}
         <SectionDivider variant="gradient" />
 
-        {/* SOCIAL PROOF - Testimonials and trust */}
+        {/* =========================
+            TRUST — SOCIAL PROOF
+           ========================= */}
         <PremiumTestimonials />
       </main>
     </>
