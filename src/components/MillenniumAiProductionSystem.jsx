@@ -55,7 +55,7 @@ const MillenniumAiProductionSystem = () => {
   ];
 
   return (
-    <section className="relative py-20 lg:py-28 bg-white overflow-hidden">
+    <section className="relative py-20 lg:py-28 bg-[#F2F0EF] overflow-hidden">
       {/* Subtle gradient background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50/20 rounded-full blur-3xl" />
