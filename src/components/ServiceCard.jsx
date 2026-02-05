@@ -27,7 +27,7 @@ const ServiceCard = ({ service, index, isLastCard }) => {
         className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
       />
 
-      <div className={`relative z-10 ${isLastCard ? 'flex items-start gap-8' : ''}`}>
+        <div className={`relative z-10 ${isLastCard ? 'flex items-start gap-8' : ''}`}>
         {/* Icon */}
         <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 mb-6 flex-shrink-0">
           <Icon className="w-7 h-7 text-white" aria-hidden="true" />
@@ -35,9 +35,15 @@ const ServiceCard = ({ service, index, isLastCard }) => {
 
         <div className={isLastCard ? 'flex-1' : ''}>
           {/* Title */}
-          <h3 className="text-2xl font-semibold text-slate-900 mb-3">
+          <motion.h3
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            whileHover={{ y: -1 }}
+            transition={{ duration: 0.3 }}
+            className="text-2xl font-semibold text-slate-900 mb-3"
+          >
             {service.title}
-          </h3>
+          </motion.h3>
 
           {/* Description */}
           <p className="text-slate-600 mb-6 leading-relaxed">

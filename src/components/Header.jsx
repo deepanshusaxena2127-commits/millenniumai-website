@@ -34,7 +34,7 @@ const Header = () => {
 
           {/* Logo text (bigger) */}
           <span className="text-2xl font-semibold tracking-wide text-white">
-            MillenniumAI
+            MillenniumAi
           </span>
         </Link>
 

@@ -1,153 +1,169 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Twitter,
   Linkedin,
-  Github,
+  Twitter,
+  Instagram,
+  Facebook,
   Mail,
-  ShieldCheck,
-  MapPin
+  Phone,
+  MapPin,
+  ArrowRight,
 } from 'lucide-react';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  const footerLinks = {
-    solutions: [
-      { name: 'Generative AI', path: '/solutions/generative-ai' },
-      { name: 'NLP', path: '/solutions/nlp' },
-      { name: 'Computer Vision', path: '/solutions/computer-vision' },
-      { name: 'Content Moderation', path: '/solutions/content-moderation' },
-      { name: 'Document Processing', path: '/solutions/document-processing' },
-      { name: 'Speech Transcription', path: '/solutions/speech-transcription' },
-      { name: 'Full-Stack Development', path: '/solutions/full-stack-development' },
-    ],
-    industries: [
-      { name: 'Healthcare & Life Sciences', path: '/industries/healthcare-life-sciences' },
-      { name: 'Autonomous Mobility', path: '/industries/autonomous-mobility' },
-      { name: 'Fintech & Banking', path: '/industries/fintech' },
-      { name: 'Retail & Consumer Tech', path: '/industries/retail-consumer-tech' },
-      { name: 'Security & Surveillance', path: '/industries/security-surveillance-ai' },
-      { name: 'Geospatial Intelligence', path: '/industries/geospatial-intelligence' },
-    ],
-    company: [
-      { name: 'About Us', path: '/company/inside-millenniumai' },
-      { name: 'Leadership', path: '/company/leadership-advisors' },
-      { name: 'Global Delivery', path: '/company/global-delivery-model' },
-      { name: 'Careers', path: '/company/careers' },
-      { name: 'Security & Data Protection', path: '/company/security-data-protection' },
-      { name: 'Contact', path: '/contact' },
-    ],
-    insights: [
-      { name: 'Insights Hub', path: '/insights/insights-hub' },
-      { name: 'Case Studies', path: '/insights/case-studies' },
-      { name: 'Blog', path: '/insights/blog' },
-    ],
-  };
-
-  const socialLinks = [
-    { icon: Linkedin, href: 'https://www.linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Mail, href: 'mailto:info@millenniumai.in', label: 'Email' },
-  ];
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary-dark border-t border-white/10 pt-20 pb-10 text-sm">
+    <footer className="bg-primary-dark text-slate-300 pt-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
 
-          {/* Brand */}
-          <div className="lg:col-span-4">
-            <Link to="/" className="text-xl font-semibold tracking-wide text-white mb-6 block">
+        {/* TOP GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14 pb-16">
+
+          {/* BRAND + HQ */}
+          <div>
+            <Link to="/" className="text-xl font-semibold text-white tracking-wide mb-5 block">
               MillenniumAI
             </Link>
 
-            <p className="text-slate-400 mb-8 max-w-sm leading-relaxed text-base">
-              MillenniumAI delivers enterprise-grade AI data and engineering
-              services, supporting global AI teams with secure, scalable,
-              and quality-driven execution.
+            <p className="text-slate-400 leading-relaxed mb-6">
+              Blueprinting the mind of machines. We deliver ground-truth data for
+              the world’s most advanced AI systems through precision annotation
+              and RLHF.
             </p>
 
-            <div className="flex gap-4 mb-8">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    aria-label={social.label}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all duration-300 text-slate-400"
-                  >
-                    <Icon className="w-5 h-5" aria-hidden />
-                  </a>
-                );
-              })}
-            </div>
-
-            <div className="space-y-3 text-slate-400">
-              <div className="flex items-start gap-3">
-                <MapPin size={20} className="text-blue-500 mt-1" aria-hidden />
-                <span>
-                  UGF 02 Krishna Enclave, Govindpuram, Ghaziabad,
-                  Uttar Pradesh 201002, India
-                </span>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <a href="mailto:info@millenniumai.in" className="hover:text-white transition-colors">
-                  info@millenniumai.in
-                </a>
-                <a href="mailto:hr@millenniumai.in" className="hover:text-white transition-colors">
-                  hr@millenniumai.in
-                </a>
+            <div className="flex items-start gap-3 mt-6">
+              <MapPin className="w-5 h-5 text-blue-500 mt-1" />
+              <div className="text-sm text-slate-400 leading-relaxed">
+                E-20, Second Floor,Sector 3<br />
+                Noida, Uttar Pradesh 201301, India.<br />
               </div>
             </div>
           </div>
 
-          {/* Links */}
-          {Object.entries(footerLinks).map(([key, links]) => (
-            <div key={key} className="lg:col-span-2">
-              <h4 className="text-white font-semibold mb-6 text-base capitalize">
-                {key}
-              </h4>
-              <ul className="space-y-4">
-                {links.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      to={link.path}
-                      className="text-slate-400 hover:text-blue-400 transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          {/* SOLUTIONS */}
+          <div>
+            <h4 className="text-white text-lg font-semibold mb-6">
+              Solutions
+            </h4>
+            <ul className="space-y-3 text-sm">
+              {[
+                { name: 'Generative AI', path: '/solutions/generative-ai' },
+                { name: 'Computer Vision', path: '/solutions/computer-vision' },
+                { name: 'NLP Services', path: '/solutions/nlp' },
+                { name: 'Content Moderation', path: '/solutions/content-moderation' },
+                { name: 'Audio & Speech', path: '/solutions/speech-transcription' },
+              ].map(item => (
+                <li key={item.name}>
+                  <Link
+                    to={item.path}
+                    className="hover:text-blue-400 transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* CONTACT */}
+          <div>
+            <h4 className="text-white text-lg font-semibold mb-6">
+              Contact Us
+            </h4>
+
+            <div className="space-y-5 text-sm">
+
+              <div className="flex gap-3">
+                <Mail className="w-5 h-5 text-blue-500 mt-1" />
+                <div>
+                  <p className="text-slate-400 text-xs">GENERAL</p>
+                  <a
+                    href="mailto:info@millenniumai.in"
+                    className="text-white hover:text-blue-400"
+                  >
+                    info@millenniumai.in
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <Mail className="w-5 h-5 text-purple-500 mt-1" />
+                <div>
+                  <p className="text-slate-400 text-xs">SALES</p>
+                  <a
+                    href="mailto:sales@millenniumai.com"
+                    className="text-white hover:text-blue-400"
+                  >
+                    sales@millenniumai.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <Phone className="w-5 h-5 text-green-500 mt-1" />
+                <div className="space-y-1">
+                  <p className="text-white">+91 7053 171 752</p>
+                  <p className="text-white">+91 7291 874 970</p>
+                </div>
+              </div>
+
             </div>
-          ))}
+          </div>
+
+          {/* STAY UPDATED */}
+          <div>
+            <h4 className="text-white text-lg font-semibold mb-6">
+              Stay Updated
+            </h4>
+
+            <p className="text-slate-400 mb-5 text-sm">
+              Get the latest AI data trends delivered to your inbox.
+            </p>
+
+            <div className="flex items-center gap-2 mb-6">
+              <input
+                type="email"
+                placeholder="Enter email"
+                className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-blue-500"
+              />
+              <button className="p-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 transition">
+                <ArrowRight className="w-4 h-4 text-white" />
+              </button>
+            </div>
+
+            <div className="flex gap-4 text-slate-400">
+              {[Linkedin, Twitter, Instagram, Facebook].map((Icon, i) => (
+                <Icon
+                  key={i}
+                  className="w-5 h-5 hover:text-white transition cursor-pointer"
+                />
+              ))}
+            </div>
+          </div>
+
         </div>
 
-        {/* Bottom */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-slate-500 text-sm">
-            &copy; {currentYear} MillenniumAI. All rights reserved.
+        {/* BOTTOM BAR */}
+        <div className="border-t border-white/10 py-6 flex flex-col md:flex-row justify-between items-center text-sm gap-4">
+          <p className="text-slate-500">
+            © {year} MillenniumAI. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-6 text-sm text-slate-500 font-medium">
-            <div className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full border border-white/10">
-              <ShieldCheck size={14} aria-hidden />
-              <span>GDPR-Aligned & NDA-Backed Operations</span>
-            </div>
+          <div className="flex gap-6 text-slate-500">
             <Link to="/company/security-data-protection" className="hover:text-white">
-              Privacy Policy
+              Privacy & Security
             </Link>
-            <Link to="/company/security-data-protection" className="hover:text-white">
-              Terms of Service
+            <Link to="/company/ai-quality-governance" className="hover:text-white">
+              Quality Standards
+            </Link>
+            <Link to="/company/partnerships" className="hover:text-white">
+              Partnerships
             </Link>
           </div>
         </div>
+
       </div>
     </footer>
   );

@@ -33,7 +33,7 @@ const trustMetrics = [
 const testimonials = [
   {
     quote:
-      'MillenniumAI significantly improved our data quality and reduced model iteration cycles. Their QA rigor and delivery discipline stood out during production scale.',
+      'MillenniumAi significantly improved our data quality and reduced model iteration cycles. Their QA rigor and delivery discipline stood out during production scale.',
     author: 'Head of Machine Learning',
     role: 'Autonomous Systems',
     company: 'US-based AI Company',
@@ -47,7 +47,7 @@ const testimonials = [
   },
   {
     quote:
-      'MillenniumAI operated as a true AI delivery partner. Their structured workflows and accuracy benchmarks made large-scale model training reliable.',
+      'MillenniumAi operated as a true AI delivery partner. Their structured workflows and accuracy benchmarks made large-scale model training reliable.',
     author: 'AI Engineering Lead',
     role: 'Healthcare AI',
     company: 'Global Organization',

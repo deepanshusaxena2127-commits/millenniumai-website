@@ -103,9 +103,16 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -2 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6"
+          >
             Our <span className="text-blue-600">Services</span>
-          </h2>
+          </motion.h2>
           <p className="text-lg text-slate-600">
             Enterprise-focused AI data, engineering, and development services
             designed to support scalable and production-ready AI systems.

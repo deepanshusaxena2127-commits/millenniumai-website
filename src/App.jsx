@@ -30,7 +30,7 @@ const InsightsPage = lazy(() => import('@/pages/InsightsPage'));
 function App() {
   return (
     <Router>
-      <div className="min-h-screen overflow-hidden bg-[#f8f9fa] text-slate-900">
+      <div className="min-h-screen overflow-hidden bg-[#F2F0EF] text-slate-900">
         {/* GLOBAL NAVIGATION */}
         <Navigation />
 

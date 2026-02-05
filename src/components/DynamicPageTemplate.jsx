@@ -185,9 +185,46 @@ const DynamicPageTemplate = ({
 
               {sections.map((section, i) => (
                 <SectionWrapper key={i} title={section.title}>
-                  <p className="text-lg text-slate-600 leading-relaxed whitespace-pre-line">
-                    {section.content}
-                  </p>
+                  {/* Subtitle if present */}
+                  {section.subtitle && (
+                    <p className="text-lg text-slate-700 font-semibold mb-6 leading-relaxed">
+                      {section.subtitle}
+                    </p>
+                  )}
+                  
+                  {/* Single content string */}
+                  {section.content && !section.paragraphs && !section.subsections && (
+                    <p className="text-lg text-slate-600 leading-relaxed whitespace-pre-line">
+                      {section.content}
+                    </p>
+                  )}
+                  
+                  {/* Array of paragraphs */}
+                  {section.paragraphs && (
+                    <div className="space-y-6">
+                      {section.paragraphs.map((paragraph, j) => (
+                        <p key={j} className="text-lg text-slate-600 leading-relaxed">
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+                  
+                  {/* Array of subsections */}
+                  {section.subsections && (
+                    <div className="space-y-8">
+                      {section.subsections.map((subsection, j) => (
+                        <div key={j} className="border-l-4 border-blue-200 pl-6">
+                          <h3 className="text-xl font-bold text-slate-900 mb-3">
+                            {subsection.title}
+                          </h3>
+                          <p className="text-lg text-slate-600 leading-relaxed">
+                            {subsection.content}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </SectionWrapper>
               ))}
             </div>

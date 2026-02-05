@@ -14,6 +14,7 @@ const solutionsData = [
   {
     icon: Heart,
     industry: 'Healthcare',
+    differentiator: 'Clinical-grade QA and HIPAA-compliant annotation with expert medical reviewers ensuring diagnostic accuracy at scale.',
     useCases: [
       'Medical image annotation and diagnostic support workflows',
       'Patient data analysis and predictive modeling',
@@ -28,6 +29,7 @@ const solutionsData = [
   {
     icon: TrendingUp,
     industry: 'Finance',
+    differentiator: 'SOX-auditable datasets with immutable transaction lineage and regulatory-grade risk model validation.',
     useCases: [
       'Fraud detection and risk modeling datasets',
       'Market analysis and forecasting support',
@@ -42,6 +44,7 @@ const solutionsData = [
   {
     icon: ShoppingCart,
     industry: 'Retail',
+    differentiator: 'Consumer behavior datasets optimized for conversion modeling and real-time personalization at merchant scale.',
     useCases: [
       'Demand forecasting and inventory optimization',
       'Personalized recommendation systems',
@@ -56,6 +59,7 @@ const solutionsData = [
   {
     icon: Factory,
     industry: 'Manufacturing',
+    differentiator: 'Computer vision datasets engineered for defect detection with sub-millimeter precision and production-line sensor fusion.',
     useCases: [
       'Predictive maintenance and quality monitoring',
       'Supply chain data optimization',
@@ -70,6 +74,7 @@ const solutionsData = [
   {
     icon: Car,
     industry: 'Automotive',
+    differentiator: 'DO-178C and ISO 26262 safety-critical perception datasets with adversarial edge-case mining for autonomous and ADAS systems.',
     useCases: [
       'Autonomous and ADAS perception datasets',
       'Driver assistance and safety analytics',
@@ -84,6 +89,7 @@ const solutionsData = [
   {
     icon: Building2,
     industry: 'Government & Public Sector',
+    differentiator: 'Secure, compartmented data pipelines with FedRAMP-aligned controls and classified dataset handling for defense and intelligence.',
     useCases: [
       'Smart city data platforms and traffic analytics',
       'Public safety and surveillance data processing',
@@ -99,7 +105,7 @@ const solutionsData = [
 
 const Solutions = () => {
   return (
-    <section className="py-20 bg-white border-t border-slate-200">
+    <section className="py-20 md:py-32 bg-[#F2F0EF]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* HEADER */}
@@ -108,12 +114,19 @@ const Solutions = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -2 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-slate-900 mb-4"
+          >
             Industry-Specific{' '}
-            <span className="text-blue-600">Solutions</span>
-          </h2>
+            <span className="text-slate-900">Solutions</span>
+          </motion.h2>
           <p className="text-lg text-slate-600">
             AI solutions tailored to industry-specific data, operational,
             and regulatory requirements.
