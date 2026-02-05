@@ -79,7 +79,7 @@ const EnterpriseGradeDeliveryQualityGovernance = () => {
   };
 
   return (
-    <section className="relative py-20 lg:py-28 bg-white overflow-hidden">
+    <section className="relative py-20 lg:py-28 bg-[#F2F0EF] overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 right-1/3 w-96 h-96 bg-indigo-100/20 rounded-full blur-3xl" />
