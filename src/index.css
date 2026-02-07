@@ -1,81 +1,63 @@
-/* =========================================================
-   GOOGLE FONTS (MUST BE FIRST)
-   ========================================================= */
+/* =========================
+   Google Fonts (MUST be first)
+   ========================= */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* =========================================================
-   TAILWIND
-   ========================================================= */
+/* =========================
+   Tailwind Layers (ONLY ONCE)
+   ========================= */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* =========================================================
-   GLOBAL RESET
-   ========================================================= */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  box-sizing: border-box;
-}
-
-/* =========================================================
-   HTML / BODY
-   ========================================================= */
+/* =========================
+   Global Layout Normalization
+   ========================= */
 html,
 body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
   font-family: 'Inter', 'Poppins', sans-serif;
-  background-color: hsl(210 20% 98%);
 }
 
-/* =========================================================
-   ROOT LAYOUT (CRITICAL FIX)
-   ========================================================= */
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Main content grows, footer stays at bottom */
-main {
-  flex: 1 0 auto;
-}
-
-/* Footer never creates extra gap */
-footer {
-  flex-shrink: 0;
-  margin-top: 0 !important;
-}
-
-/* =========================================================
-   DESIGN TOKENS
-   ========================================================= */
+/* =========================
+   Base Design Tokens
+   ========================= */
 @layer base {
   :root {
+    /* PRIMARY DARK PALETTE (ULTRA DARK NAVY) */
     --primary-dark: 222 100% 3%;
     --primary-dark-sec: 220 39% 11%;
     --primary-dark-ter: 228 86% 5%;
 
+    /* LIGHT PALETTE */
     --background: 210 20% 98%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
 
+    /* TEXT */
     --foreground: 222 47% 11%;
+    --foreground-light: 0 0% 100%;
     --muted-foreground: 215 16% 47%;
 
+    /* ACCENTS */
     --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
     --accent: 265 83% 70%;
+    --accent-foreground: 210 40% 98%;
 
+    /* UI */
     --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
     --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
   }
 
   body {
@@ -92,14 +74,15 @@ footer {
   }
 }
 
-/* =========================================================
-   UTILITIES (UNCHANGED DESIGN)
-   ========================================================= */
+/* =========================
+   Utility Classes
+   ========================= */
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .text-gradient-hero {
@@ -109,13 +92,14 @@ footer {
   }
 
   .bg-gradient-brand {
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
   }
 
   .bg-gradient-dark {
-    background: linear-gradient(135deg, #111827, #020617);
+    background: linear-gradient(135deg, #111827 0%, #0a0a0f 50%, #020617 100%);
   }
 
+  /* Glass utilities (USED ELSEWHERE – NOT HEADER) */
   .glass-panel {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(12px);
@@ -133,41 +117,9 @@ footer {
   }
 }
 
-/* =========================================================
-   HEADER / NAV
-   ========================================================= */
-header,
-nav {
-  background-color: hsl(var(--primary-dark)) !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  box-shadow: none !important;
-}
-
-/* =========================================================
-   REMOVE ANY OVERLAYS / GHOST BACKGROUNDS
-   ========================================================= */
-body::before,
-body::after,
-#root::before,
-#root::after {
-  content: none !important;
-  display: none !important;
-  background: none !important;
-}
-
-/* =========================================================
-   SECTION SEAM PREVENTION (NO VISUAL LINES)
-   ========================================================= */
-section,
-main {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-/* =========================================================
-   SCROLLBAR
-   ========================================================= */
+/* =========================
+   Scrollbar Styling
+   ========================= */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -185,9 +137,40 @@ main {
   background: #94a3b8;
 }
 
-/* =========================================================
-   TEXT SELECTION
-   ========================================================= */
+/* =========================
+   Text Selection
+   ========================= */
 ::selection {
   background: rgba(37, 99, 235, 0.2);
+}
+
+/* =========================
+   FORCE SOLID HEADER (FINAL FIX)
+   ========================= */
+header {
+  background-color: hsl(var(--primary-dark)) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* =========================
+   REMOVE TOP GRADIENT OVERLAY (FINAL FIX)
+   ========================= */
+
+/* Kill any global fixed/absolute gradient above header */
+body::before,
+body::after,
+#root::before,
+#root::after {
+  background: none !important;
+  content: none !important;
+}
+
+/* Force header area to be fully opaque */
+header,
+nav {
+  background-color: hsl(var(--primary-dark)) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
 }
