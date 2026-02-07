@@ -56,8 +56,7 @@ body {
     --radius: 0.5rem;
   }
 
-  /* 🔒 KEEP DESIGN SYSTEM INTACT
-     BUT PREVENT STRAY BORDERS */
+  /* 🔒 PREVENT STRAY 1PX BORDERS (LINE FIX #1) */
   *,
   *::before,
   *::after {
@@ -168,4 +167,16 @@ body::after,
 #root::after {
   content: none !important;
   background: none !important;
+}
+
+/* =========================
+   KILL SECTION SEAM (LINE FIX #2)
+   ========================= */
+section {
+  position: relative;
+  margin-top: -1px;
+}
+
+section:first-of-type {
+  margin-top: 0;
 }
