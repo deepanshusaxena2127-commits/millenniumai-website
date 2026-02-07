@@ -15,34 +15,37 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary-dark text-slate-300 pt-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <footer className="bg-primary-dark text-slate-300 pt-16 md:pt-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
-        {/* TOP GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14 pb-16">
+        {/* ================= TOP GRID ================= */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-14 pb-14 md:pb-16 text-center md:text-left">
 
-          {/* BRAND + HQ */}
+          {/* ================= BRAND + HQ ================= */}
           <div>
-            <Link to="/" className="text-xl font-semibold text-white tracking-wide mb-5 block">
+            <Link
+              to="/"
+              className="text-xl font-semibold text-white tracking-wide mb-5 block"
+            >
               MillenniumAI
             </Link>
 
-            <p className="text-slate-400 leading-relaxed mb-6">
+            <p className="text-slate-400 leading-relaxed mb-6 text-sm md:text-base">
               Blueprinting the mind of machines. We deliver ground-truth data for
               the world’s most advanced AI systems through precision annotation
               and RLHF.
             </p>
 
-            <div className="flex items-start gap-3 mt-6">
-              <MapPin className="w-5 h-5 text-blue-500 mt-1" />
+            <div className="flex items-start justify-center md:justify-start gap-3 mt-6">
+              <MapPin className="w-5 h-5 text-blue-500 mt-1 shrink-0" />
               <div className="text-sm text-slate-400 leading-relaxed">
-                E-20, Second Floor,Sector 3<br />
-                Noida, Uttar Pradesh 201301, India.<br />
+                E-20, Second Floor, Sector 3<br />
+                Noida, Uttar Pradesh 201301, India.
               </div>
             </div>
           </div>
 
-          {/* SOLUTIONS */}
+          {/* ================= SOLUTIONS ================= */}
           <div>
             <h4 className="text-white text-lg font-semibold mb-6">
               Solutions
@@ -67,15 +70,15 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* CONTACT */}
+          {/* ================= CONTACT ================= */}
           <div>
             <h4 className="text-white text-lg font-semibold mb-6">
               Contact Us
             </h4>
 
-            <div className="space-y-5 text-sm">
+            <div className="space-y-6 text-sm">
 
-              <div className="flex gap-3">
+              <div className="flex justify-center md:justify-start gap-3">
                 <Mail className="w-5 h-5 text-blue-500 mt-1" />
                 <div>
                   <p className="text-slate-400 text-xs">GENERAL</p>
@@ -88,7 +91,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex justify-center md:justify-start gap-3">
                 <Mail className="w-5 h-5 text-purple-500 mt-1" />
                 <div>
                   <p className="text-slate-400 text-xs">SALES</p>
@@ -101,7 +104,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex justify-center md:justify-start gap-3">
                 <Phone className="w-5 h-5 text-green-500 mt-1" />
                 <div className="space-y-1">
                   <p className="text-white">+91 7053 171 752</p>
@@ -112,7 +115,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* STAY UPDATED */}
+          {/* ================= STAY UPDATED ================= */}
           <div>
             <h4 className="text-white text-lg font-semibold mb-6">
               Stay Updated
@@ -122,18 +125,18 @@ const Footer = () => {
               Get the latest AI data trends delivered to your inbox.
             </p>
 
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex flex-col sm:flex-row items-stretch gap-3 mb-6">
               <input
                 type="email"
                 placeholder="Enter email"
                 className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-blue-500"
               />
-              <button className="p-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 transition">
-                <ArrowRight className="w-4 h-4 text-white" />
+              <button className="p-3 rounded-lg bg-blue-600 hover:bg-blue-500 transition">
+                <ArrowRight className="w-4 h-4 text-white mx-auto" />
               </button>
             </div>
 
-            <div className="flex gap-4 text-slate-400">
+            <div className="flex justify-center md:justify-start gap-6 text-slate-400">
               {[Linkedin, Twitter, Instagram, Facebook].map((Icon, i) => (
                 <Icon
                   key={i}
@@ -145,13 +148,13 @@ const Footer = () => {
 
         </div>
 
-        {/* BOTTOM BAR */}
-        <div className="border-t border-white/10 py-6 flex flex-col md:flex-row justify-between items-center text-sm gap-4">
+        {/* ================= BOTTOM BAR ================= */}
+        <div className="border-t border-white/10 py-6 flex flex-col md:flex-row justify-between items-center text-sm gap-4 text-center md:text-left">
           <p className="text-slate-500">
             © {year} MillenniumAI. All rights reserved.
           </p>
 
-          <div className="flex gap-6 text-slate-500">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-slate-500">
             <Link to="/company/security-data-protection" className="hover:text-white">
               Privacy & Security
             </Link>
