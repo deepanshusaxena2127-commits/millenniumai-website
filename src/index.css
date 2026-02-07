@@ -26,7 +26,7 @@ body {
    ========================= */
 @layer base {
   :root {
-    /* PRIMARY DARK PALETTE (ULTRA DARK NAVY) */
+    /* PRIMARY DARK PALETTE */
     --primary-dark: 222 100% 3%;
     --primary-dark-sec: 220 39% 11%;
     --primary-dark-ter: 228 86% 5%;
@@ -56,8 +56,13 @@ body {
     --radius: 0.5rem;
   }
 
-  * {
-    @apply border-border;
+  /* 🔒 KEEP DESIGN SYSTEM INTACT
+     BUT PREVENT STRAY BORDERS */
+  *,
+  *::before,
+  *::after {
+    border-color: hsl(var(--border));
+    border-width: 0;
   }
 
   body {
@@ -99,7 +104,6 @@ body {
     background: linear-gradient(135deg, #111827 0%, #0a0a0f 50%, #020617 100%);
   }
 
-  /* Glass utilities (USED ELSEWHERE – NOT HEADER) */
   .glass-panel {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(12px);
@@ -145,32 +149,23 @@ body {
 }
 
 /* =========================
-   FORCE SOLID HEADER (FINAL FIX)
+   FORCE SOLID HEADER
    ========================= */
-header {
-  background-color: hsl(var(--primary-dark)) !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-/* =========================
-   REMOVE TOP GRADIENT OVERLAY (FINAL FIX)
-   ========================= */
-
-/* Kill any global fixed/absolute gradient above header */
-body::before,
-body::after,
-#root::before,
-#root::after {
-  background: none !important;
-  content: none !important;
-}
-
-/* Force header area to be fully opaque */
 header,
 nav {
   background-color: hsl(var(--primary-dark)) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   box-shadow: none !important;
+}
+
+/* =========================
+   REMOVE ANY GLOBAL OVERLAY
+   ========================= */
+body::before,
+body::after,
+#root::before,
+#root::after {
+  content: none !important;
+  background: none !important;
 }
