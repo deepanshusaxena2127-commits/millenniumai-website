@@ -93,10 +93,10 @@ const Footer = () => {
                 <div>
                   <p className="text-slate-400 text-xs">SALES</p>
                   <a
-                    href="mailto:sales@millenniumai.com"
+                    href="mailto:sales@millenniumai.in"
                     className="text-white hover:text-blue-400"
                   >
-                    sales@millenniumai.com
+                    sales@millenniumai.in
                   </a>
                 </div>
               </div>
