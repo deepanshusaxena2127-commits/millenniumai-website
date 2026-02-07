@@ -147,26 +147,51 @@ export default function Hero() {
           </motion.p>
 
           {/* CTAs */}
-          <motion.div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <motion.div custom={0} variants={ctaVariants}>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-blue-600 text-white font-semibold shadow-lg hover:bg-blue-700 transition"
-              >
-                Get Started <ArrowRight className="w-5 h-5" />
-              </Link>
-            </motion.div>
+          <motion.div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+  {/* PRIMARY CTA */}
+  <motion.div custom={0} variants={ctaVariants}>
+    <Link
+      to="/contact"
+      className="
+        inline-flex items-center justify-center
+        h-12
+        px-8
+        rounded-lg
+        bg-blue-600 text-white
+        font-semibold
+        leading-none
+        shadow-lg
+        hover:bg-blue-700 hover:shadow-xl
+        transition
+      "
+    >
+      Get Started
+      <ArrowRight className="w-5 h-5 ml-2 shrink-0" />
+    </Link>
+  </motion.div>
 
-            <motion.div custom={1} variants={ctaVariants}>
-              <Link
-                to="/solutions"
-                className="px-8 py-3.5 rounded-lg border-2 border-slate-300 font-semibold text-slate-800 hover:border-blue-600 hover:bg-blue-50 transition"
-              >
-                Enterprise Capabilities
-              </Link>
-            </motion.div>
-          </motion.div>
-
+  {/* SECONDARY CTA */}
+  <motion.div custom={1} variants={ctaVariants}>
+    <Link
+      to="/solutions"
+      className="
+        inline-flex items-center justify-center
+        h-12
+        px-8
+        rounded-lg
+        border-2 border-slate-300
+        font-semibold
+        leading-none
+        text-slate-800
+        bg-white/50
+        hover:border-blue-600 hover:bg-blue-50
+        transition
+      "
+    >
+      Enterprise Capabilities
+    </Link>
+  </motion.div>
+</motion.div>
           {/* Credibility Cards */}
           <motion.div
             custom={2}
