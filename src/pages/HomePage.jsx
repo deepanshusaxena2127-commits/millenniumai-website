@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import Hero from '@/components/Hero';
-import SectionDivider from '@/components/SectionDivider';
 import MillenniumAiProductionSystem from '@/components/MillenniumAiProductionSystem';
 import PremiumServicesShowcase from '@/components/PremiumServicesShowcase';
 import EnterpriseEngagementModels from '@/components/EnterpriseEngagementModels';
@@ -13,7 +12,9 @@ import PremiumTestimonials from '@/components/PremiumTestimonials';
 const HomePage = () => {
   return (
     <>
-      {/* SEO / Metadata */}
+      {/* =========================
+          SEO / Metadata
+         ========================= */}
       <Helmet>
         <title>MillenniumAi | Production AI Data & Enterprise AI Services</title>
         <meta
@@ -22,52 +23,29 @@ const HomePage = () => {
         />
       </Helmet>
 
+      {/* =========================
+          PAGE WRAPPER
+         ========================= */}
       <main className="bg-[#F2F0EF] text-slate-900 overflow-hidden">
-        {/* =========================
-            HERO — PRIMARY POSITIONING
-           ========================= */}
+        {/* HERO */}
         <Hero />
 
-        <SectionDivider variant="gradient" />
-
-        {/* =========================
-            SYSTEM — HOW PRODUCTION AI RUNS
-           ========================= */}
+        {/* SYSTEM */}
         <MillenniumAiProductionSystem />
 
-        <SectionDivider variant="gradient" />
-
-        {/* =========================
-            CAPABILITIES — WHAT WE DO
-           ========================= */}
+        {/* SERVICES */}
         <PremiumServicesShowcase />
 
-        <SectionDivider variant="gradient" />
+        {/* ENGAGEMENT MODELS */}
+        <EnterpriseEngagementModels />
 
-        {/* =========================
-    ENGAGEMENT MODELS — HOW WE WORK
-   ========================= */}
-<div className="bg-[#F2F0EF] relative isolate">
-  <EnterpriseEngagementModels />
-</div>
-
-        {/* =========================
-            VALUE — WHY MILLENNIUMAI
-           ========================= */}
+        {/* VALUE PROP */}
         <PremiumValueProp />
 
-        <SectionDivider variant="gradient" />
-
-        {/* =========================
-            INDUSTRIES — WHERE WE OPERATE
-           ========================= */}
+        {/* SOLUTIONS */}
         <Solutions />
 
-        <SectionDivider variant="gradient" />
-
-        {/* =========================
-            TRUST — SOCIAL PROOF
-           ========================= */}
+        {/* TESTIMONIALS */}
         <PremiumTestimonials />
       </main>
     </>
