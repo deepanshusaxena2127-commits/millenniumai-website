@@ -56,26 +56,41 @@ const ContactPage = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!validateForm()) {
-      toast({
-        title: "Form validation failed",
-        description: "Please correct the highlighted fields and try again.",
-        variant: "destructive",
+  e.preventDefault();
+
+  if (!validateForm()) {
+    toast({
+      title: "Form validation failed",
+      description: "Please correct the highlighted fields and try again.",
+      variant: "destructive",
+    });
+    return;
+  }
+
+  setIsSubmitting(true);
+
+  setTimeout(() => {
+
+    // ✅ GA4 Lead Tracking Event
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "generate_lead", {
+        event_category: "engagement",
+        event_label: "Contact Form Submission",
+        value: 1,
       });
-      return;
     }
-    setIsSubmitting(true);
-    setTimeout(() => {
-      toast({
-        title: "Message sent successfully ",
-        description: "Our AI experts will reach out within 24 hours.",
-      });
-      setFormData(INITIAL_FORM_STATE);
-      setErrors({});
-      setIsSubmitting(false);
-    }, 1500);
-  };
+
+    toast({
+      title: "Message sent successfully ",
+      description: "Our AI experts will reach out within 24 hours.",
+    });
+
+    setFormData(INITIAL_FORM_STATE);
+    setErrors({});
+    setIsSubmitting(false);
+
+  }, 1500);
+};
 
   return (
     <>
