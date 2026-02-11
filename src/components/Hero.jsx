@@ -58,6 +58,12 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden pt-16 pb-32 md:pt-32 md:pb-40">
+
+      {/* ✅ SEO Fallback H1 (Invisible but crawlable) */}
+      <h1 className="sr-only">
+        MillenniumAi – Infrastructure for Production AI in Regulated Environments
+      </h1>
+
       {/* ---------- Background ---------- */}
       <div className="absolute inset-0 overflow-hidden">
         <div
@@ -148,50 +154,49 @@ export default function Hero() {
 
           {/* CTAs */}
           <motion.div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-  {/* PRIMARY CTA */}
-  <motion.div custom={0} variants={ctaVariants}>
-    <Link
-      to="/contact"
-      className="
-        inline-flex items-center justify-center
-        h-12
-        px-8
-        rounded-lg
-        bg-blue-600 text-white
-        font-semibold
-        leading-none
-        shadow-lg
-        hover:bg-blue-700 hover:shadow-xl
-        transition
-      "
-    >
-      Get Started
-      <ArrowRight className="w-5 h-5 ml-2 shrink-0" />
-    </Link>
-  </motion.div>
+            <motion.div custom={0} variants={ctaVariants}>
+              <Link
+                to="/contact"
+                className="
+                  inline-flex items-center justify-center
+                  h-12
+                  px-8
+                  rounded-lg
+                  bg-blue-600 text-white
+                  font-semibold
+                  leading-none
+                  shadow-lg
+                  hover:bg-blue-700 hover:shadow-xl
+                  transition
+                "
+              >
+                Get Started
+                <ArrowRight className="w-5 h-5 ml-2 shrink-0" />
+              </Link>
+            </motion.div>
 
-  {/* SECONDARY CTA */}
-  <motion.div custom={1} variants={ctaVariants}>
-    <Link
-      to="/solutions"
-      className="
-        inline-flex items-center justify-center
-        h-12
-        px-8
-        rounded-lg
-        border-2 border-slate-300
-        font-semibold
-        leading-none
-        text-slate-800
-        bg-white/50
-        hover:border-blue-600 hover:bg-blue-50
-        transition
-      "
-    >
-      Enterprise Capabilities
-    </Link>
-  </motion.div>
-</motion.div>
+            <motion.div custom={1} variants={ctaVariants}>
+              <Link
+                to="/solutions"
+                className="
+                  inline-flex items-center justify-center
+                  h-12
+                  px-8
+                  rounded-lg
+                  border-2 border-slate-300
+                  font-semibold
+                  leading-none
+                  text-slate-800
+                  bg-white/50
+                  hover:border-blue-600 hover:bg-blue-50
+                  transition
+                "
+              >
+                Enterprise Capabilities
+              </Link>
+            </motion.div>
+          </motion.div>
+
           {/* Credibility Cards */}
           <motion.div
             custom={2}
@@ -232,6 +237,7 @@ export default function Hero() {
               </div>
             </div>
           </motion.div>
+
         </motion.div>
       </div>
     </section>
