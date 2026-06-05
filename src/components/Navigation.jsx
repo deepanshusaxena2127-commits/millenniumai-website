@@ -67,8 +67,7 @@ const Navigation = () => {
   const [mobileExpanded, setMobileExpanded] = useState({});
   const location = useLocation();
 
-  const LOGO_URL =
-    'https://horizons-cdn.hostinger.com/c99918c0-b1b7-4786-81d6-2c876c6d4f20/1e70a00fd108bb574c8ec686e511ee18.png';
+  const LOGO_URL = '/logo.png';
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
