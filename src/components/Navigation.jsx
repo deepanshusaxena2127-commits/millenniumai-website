@@ -101,7 +101,7 @@ const Navigation = () => {
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 z-50" aria-label="MillenniumAi Home">
-          <img src={LOGO_URL} alt="MillenniumAi Logo" className="h-10 w-auto object-contain" />
+          <img src={LOGO_URL} alt="MillenniumAi Logo" className="h-16 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}
