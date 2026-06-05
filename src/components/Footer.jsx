@@ -24,11 +24,15 @@ const Footer = () => {
           {/* ================= BRAND + HQ ================= */}
           <div>
             <Link
-              to="/"
-              className="text-xl font-semibold text-white tracking-wide mb-5 block"
-            >
-              MillenniumAI
-            </Link>
+  to="/"
+  className="mb-5 block"
+>
+  <img
+    src="/logo.png"
+    alt="MillenniumAI Logo"
+    className="h-16 w-auto object-contain"
+  />
+</Link>
 
             <p className="text-slate-400 leading-relaxed mb-6 text-sm md:text-base">
               Blueprinting the mind of machines. We deliver ground-truth data for
