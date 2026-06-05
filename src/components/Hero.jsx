@@ -129,7 +129,10 @@ export default function Hero() {
           </motion.div>
 
           {/* Headline */}
-          <motion.h1 className="text-5xl md:text-6xl font-extrabold tracking-tight">
+          <motion.h1
+            variants={headlineVariants}
+            className="text-5xl md:text-6xl font-extrabold tracking-tight"
+          >
             Infrastructure for Production AI{' '}
             <span className="relative inline-block">
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
