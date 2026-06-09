@@ -176,13 +176,13 @@ const ContactPage = () => {
                   <InfoItem 
                     icon={Phone} 
                     title="Phone" 
-                    lines={["+91 7291874970", "+91 7053171752"]} 
+                    lines={["+91 7827771752", "+91 7053171752"]} 
                   />
                   <InfoItem
                     icon={MapPin}
                     title="Headquarters"
                     lines={[
-                      "E-20, 2nd Floor, Sector 3",
+                      "C-54, 4th Floor, Sector 2",
                       "Noida, Uttar Pradesh 201301, India",
                     ]}
                   />
