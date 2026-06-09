@@ -43,7 +43,7 @@ const Footer = () => {
             <div className="flex items-start justify-center md:justify-start gap-3 mt-6">
               <MapPin className="w-5 h-5 text-blue-500 mt-1 shrink-0" />
               <div className="text-sm text-slate-400 leading-relaxed">
-                E-20, Second Floor, Sector 3<br />
+                C-54, 4th Floor, Sector 2<br />
                 Noida, Uttar Pradesh 201301, India.
               </div>
             </div>
@@ -112,7 +112,7 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-green-500 mt-1" />
                 <div className="space-y-1">
                   <p className="text-white">+91 7053 171 752</p>
-                  <p className="text-white">+91 7291 874 970</p>
+                  <p className="text-white">+91 7827 771 752</p>
                 </div>
               </div>
 
